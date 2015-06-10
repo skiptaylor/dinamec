@@ -1,0 +1,89 @@
+<div class="white">
+	<div class="container">
+		<div class="row" style="padding: 70px 0 24px 0;">
+			<div class="span12">
+				<p class="pull-right"><%= Time.now.strftime("%A %d %B %Y") %></p>
+				<h5>Dashboard</h5>
+				<hr />
+			</div>
+			
+				<div class="span6">
+					<h6>Orders</h6>
+					<table class="table table-striped table-condensed">
+						<tr>
+							<% @purchase = Purchase.where(:tracking_number => nil) %>
+							<th style="text-align: right; width: 15%;"><span class="badge badge-warning"><%= @purchase.count %></span></th>
+							<td>Orders to Ship</td>
+						</tr>
+						<tr>
+							<% @purchase = Purchase.where(:received_on => nil).count - @purchase = Purchase.where(:tracking_number => nil).count %>
+							<th style="text-align: right; width: 15%;"><span class="badge badge-success"><%= @purchase %></span></th>
+							<td>In Route</td>
+						</tr>
+
+					</table>	
+					<h6>Totals</h6>
+					<table class="table table-striped table-condensed">
+						<tr>
+							<% @product = Product.where(:status => 'Active') %>
+							<th style="text-align: right; width: 15%;"><%= @product.count %></th>
+							<td>Active Products</td>
+						</tr>
+						<tr>
+							<% @product = Product.where(:status => 'Hold') %>
+							<th style="text-align: right; width: 15%;"><%= @product.count %></th>
+							<td>Products on Hold</td>
+						</tr>
+						<tr>
+							<% @distributor = Distributor.where(:species => 'human') %>
+							<th style="text-align: right; width: 15%;"><%= @distributor.count %></th>
+							<td>Human Distributors</td>
+						</tr>
+						<tr>
+							<% @distributor = Distributor.where(:species => 'pet') %>
+							<th style="text-align: right; width: 15%;"><%= @distributor.count %></th>
+							<td>Pet Distributors</td>
+						</tr>
+					</table>
+				</div>
+					<div class="span6">
+						<div class="btn-group pull-right" id="read-list-toggle">
+						  <button class="btn btn-mini" data-toggle="">Unread</button>
+						  <button class="btn btn-mini true" data-toggle="true">Archived</button>
+						</div>
+						<h6>Contact-Us Responses</h6>
+					<table class="table table-striped table-condensed">
+
+					<% @contact.sort{|a,b| b.created_at <=> a.created_at}.each do |contact| %>
+					<tr>
+						<td class="read-link"  data-status="<%= contact.read %>"><small><%= contact.created_at.strftime("%A %d %B %Y") %></small></td>
+						<td class="read-link"  data-status="<%= contact.read %>"><%= contact.name %></td>
+						<td style="text-align: right;" class="read-link"  data-status="<%= contact.read %>"><a href="/contact/<%= contact.id %>/contact" class="btn btn-mini"><span style="color: #007dbc;"><i class="icon-eye-open"></i></i></a> &nbsp; <a href="/contact/<%= contact.id %>/edit" class="btn btn-mini"><span style="color: #00a651;"><i class="icon-edit"></i></span></a> &nbsp; <a href="/contact/<%= contact.id %>/delete" class="btn btn-mini delete"><span style="color: #f66316;"><i class="icon-trash"></i></span></a></td>
+					</tr>
+					<% end %>
+					</table>
+				</div>
+				<div class="span12">
+					<hr />
+					<p class="center"><img src="/img/aui-logo.png" width="200px" /></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('.link-row').click(function() {
+		window.location = $(this).attr('id');
+	});
+
+	$('td.read-link[data-status="true"]').hide();
+	
+	$('#read-list-toggle button').click(function() {
+		$('#read-list-toggle button').removeClass('Unread');
+		$(this).addClass('Unread');
+		var status = $(this).attr('data-toggle');
+		$('.read-link').hide();
+		$('.read-link[data-status="' + status + '"]').show();
+		return false;
+	});
+</script>

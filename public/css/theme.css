@@ -1,0 +1,300 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,300,400,600,700|Shadows+Into+Light+Two);
+/*font-family: 'Shadows Into Light Two', cursive;*/
+
+body {
+  padding-top: 50px;
+  background-color: #195fae;
+  font-family: 'Open Sans', helvetica, sans-serif;
+}
+
+.blue-ground	{
+	background-color: #195fae;
+}
+
+.white-ground	{
+	background-color: white;
+}
+
+.master-padding	{
+	padding-top: 48px;
+	padding-bottom: 48px;
+}
+
+.navbar 	{
+	background-color: transparent;
+}
+
+.nav	{
+	font-weight: 400;
+}
+
+.navbar .nav > li > a	{
+	text-decoration: none;
+	background-color: transparent;
+	color: #000;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.navbar .nav > li > a:hover	{
+   color: #ffffff;
+   text-decoration: none;
+   background-color: #207ce5;
+   background-image: -moz-linear-gradient(top, transparent, transparent);
+   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(transparent));
+   background-image: -webkit-linear-gradient(top, transparent, transparent);
+   background-image: -o-linear-gradient(top, transparent, transparent);
+   background-image: linear-gradient(to bottom, transparent, transparent);
+   background-repeat: repeat-x;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='transparent', endColorstr='transparent', GradientType=0);
+   -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+           transition: all .2s ease-in-out;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus,
+.navbar .nav .active > a:active {
+   color: #ffffff;
+   text-decoration: none;
+   background-color: #1d73d4;
+   background-image: -moz-linear-gradient(top, #195fae, #1d73d4);
+   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#195fae), to(#1d73d4));
+   background-image: -webkit-linear-gradient(top, #195fae, #1d73d4);
+   background-image: -o-linear-gradient(top, #195fae, #1d73d4);
+   background-image: linear-gradient(to bottom, #195fae, #1d73d4);
+   background-repeat: repeat-x;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='##195fae', endColorstr='##1d73d4', GradientType=0);
+}
+
+/*.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus,
+.navbar .nav .active > a:active {
+	color: #195fae;
+	background-color: #000;
+}*/
+
+/*.logo	{
+	margin: -20px 0 0 18px;
+   -webkit-transition: all .8s ease-in-out;
+        -o-transition: all .8s ease-in-out;
+           transition: all .8s ease-in-out;
+}
+*/
+
+.hr-black	{
+	border-top: 1px solid #2287f9;
+}
+
+h1	{
+	font-family: 'Shadows Into Light Two', cursive;
+	color: #195fae;
+	font-size: 2.2em;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+}
+
+h2	{
+	color: #195fae;
+	font-size: 2em;
+	font-weight: 700;
+	line-height: 1.3em;
+}
+
+h3	{
+	color: #000000;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 1.3em;
+}
+
+h4	{
+	font-family: 'Trebuchet MS', Arial, sans-serif;
+	color: #1b4568;
+	letter-spacing: 2px;
+	font-size: 1.5em;
+	font-weight: 400;
+	line-height: 1.3em;
+}
+
+h6	{
+	color: #ffffff;
+	font-size: 1.3em;
+	font-weight: 700;
+	line-height: 1em;
+	margin-top: 0;
+}
+
+.center	{
+	text-align: center;
+}
+
+.shadow	{
+   -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, .4);
+           box-shadow: 0 2px 12px rgba(0, 0, 0, .4);
+}
+
+#middle-bar	{
+	background-image: url(../img/draw-ground1.png);
+	margin: 0;
+	height: 72px;
+	background-position: 95%;
+	background-repeat: no-repeat;
+}
+
+.bar	{
+	background-color: #677f97;
+	margin: 0 0 1em 0;
+	padding: 0 0 0 0.5em;
+	text-align: left; 
+	color: white;
+   -webkit-text-shadow: 0 -1px 1px rgba(0, 0, 0, .7);
+           text-shadow: 0 -1px 1px rgba(0, 0, 0, .7);
+}
+
+.footer	{
+	background-color: #0a49a7;
+	font-size: .8em;
+	line-height: 1.6em;
+	text-align: left; 
+	color: #fff;
+}
+
+.transparent	{
+	padding: 0 2em;
+	opacity: 0.5;
+   -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+           transition: all .3s ease-in-out;
+}
+
+.transparent:hover	{
+	opacity: 1;
+}
+
+div.tag	{
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 2.6em;
+	padding-top: 9px;
+	color: #e5e5e5;
+	width: 90%;
+}
+
+div.tag-xm	{
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 7vmin;
+	padding-top: 5%;
+	color: #e5e5e5;
+	width: 90%;
+}
+
+
+/*------------   Footer   --------------*/
+
+.footer	{
+	background-color: transparent;
+	padding-top: 1.5em;
+	font-size: .8em;
+	line-height: 1.8em;
+	text-align: left; 
+	color: #fff;
+}
+
+.footer hr	{
+	border-top: 1px solid #1f79de;
+	margin-top: 1.5em;
+}
+
+
+
+/*------------   Form Signin   --------------*/
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto 48px auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 20px;
+	color: #195fae;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 30px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/*#tag {
+    position: relative;
+
+    -moz-animation-name: dropHeader;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 1s;
+
+    -webkit-animation-name: dropHeader;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 1s;
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+@-moz-keyframes dropHeader {
+    0% {
+        -moz-transform: translateX(-300px);
+		  opacity: 0;
+    }
+    100% {
+        -moz-transform: translateX(0);
+		  opacity: 1;
+    }
+}
+@-webkit-keyframes dropHeader {
+    0% {
+        -webkit-transform: translateX(-300px);
+		  opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+		  opacity: 1;
+    }
+}
+@keyframes dropHeader {
+    0% {
+        transform: translateX(-300px);
+		  opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+		  opacity: 1;
+    }
+}
+
+*/
