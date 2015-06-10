@@ -16,7 +16,7 @@ body {
 }
 
 .master-padding	{
-	padding-top: 48px;
+	padding-top: 14px;
 	padding-bottom: 48px;
 }
 
@@ -208,6 +208,7 @@ div.tag-xm	{
 .footer	{
 	background-color: transparent;
 	padding-top: 1.5em;
+	padding-bottom: 3em;
 	font-size: .8em;
 	line-height: 1.8em;
 	text-align: left; 
