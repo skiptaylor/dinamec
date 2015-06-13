@@ -8,6 +8,12 @@ body {
   font-size: 15px;
 }
 
+.container	{
+   -webkit-transition: all .8s ease-in-out;
+        -o-transition: all .8s ease-in-out;
+           transition: all .8s ease-in-out;
+}
+
 .blue-ground	{
 	background-color: #195fae;
 }
@@ -420,27 +426,27 @@ table#beds tr td	{
 
 
 
-/*#tag {
+#tag {
     position: relative;
 
     -moz-animation-name: dropHeader;
     -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: ease-in;
-    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-duration: .3s;
 
     -webkit-animation-name: dropHeader;
     -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-in;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: .3s;
 
     animation-name: dropHeader;
     animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-duration: .3s;
 }
 @-moz-keyframes dropHeader {
     0% {
-        -moz-transform: translateX(-300px);
+        -moz-transform: translateX(0px);
 		  opacity: 0;
     }
     100% {
@@ -450,7 +456,7 @@ table#beds tr td	{
 }
 @-webkit-keyframes dropHeader {
     0% {
-        -webkit-transform: translateX(-300px);
+        -webkit-transform: translateX(0px);
 		  opacity: 0;
     }
     100% {
@@ -460,7 +466,7 @@ table#beds tr td	{
 }
 @keyframes dropHeader {
     0% {
-        transform: translateX(-300px);
+        transform: translateX(0px);
 		  opacity: 0;
     }
     100% {
@@ -469,5 +475,5 @@ table#beds tr td	{
     }
 }
 
-*/
+
 
