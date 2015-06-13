@@ -3,7 +3,7 @@
 
 body {
   padding-top: 50px;
-  background-color: #195fae;
+  background-color: #ffffff;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-size: 15px;
 }
@@ -278,7 +278,7 @@ label	{
 
 
 .footer	{
-	background-color: #0a49a7;
+	background-color: #195fae;
 	font-size: .8em;
 	line-height: 1.6em;
 	text-align: left; 
@@ -474,6 +474,56 @@ table#beds tr td	{
 		  opacity: 1;
     }
 }
+
+#tag2 {
+    position: relative;
+
+    -moz-animation-name: dropHeader;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-duration: 1s;
+
+    -webkit-animation-name: dropHeader;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1s;
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+}
+@-moz-keyframes dropHeader {
+    0% {
+        -moz-transform: translateX(0px);
+		  opacity: 0;
+    }
+    100% {
+        -moz-transform: translateX(0);
+		  opacity: 1;
+    }
+}
+@-webkit-keyframes dropHeader {
+    0% {
+        -webkit-transform: translateX(0px);
+		  opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+		  opacity: 1;
+    }
+}
+@keyframes dropHeader {
+    0% {
+        transform: translateX(0px);
+		  opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+		  opacity: 1;
+    }
+}
+
 
 
 
