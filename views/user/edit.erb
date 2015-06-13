@@ -1,0 +1,77 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<h1 style="margin-bottom: .7em;">User</h1>
+		<div class="row">
+			<div class="col-lg-10">
+			<form class="form-horizontal" method="post">
+			  <div class="form-group">
+			    <label for="first_name" class="col-sm-2 control-label">First Name</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<%= @user.first_name %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="<%= @user.last_name %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="title" class="col-sm-2 control-label">Title</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="last_name" name="title" placeholder="Title" value="<%= @user.title %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="email" class="col-sm-2 control-label">Email</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= @user.email %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="phone1" class="col-sm-2 control-label">Phone</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="phone1" name="phone1" placeholder="Phone" value="<%= @user.phone1 %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="phone2" class="col-sm-2 control-label">Alternate Phone</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="phone2" name="phone2" placeholder="Alternate Phone" value="<%= @user.phone2 %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="username" class="col-sm-2 control-label">Username</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<%= @user.username %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="password" class="col-sm-2 control-label">Password</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="password" name="password" placeholder="Password" value="<%= @user.password %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox"> Active
+			        </label>
+			      </div>
+			    </div>
+			  </div>
+			  <br />
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="/user/users">Cancel</a> &nbsp; <a class="btn btn-sm btn-warning delete" href="/user/<%= @user.id %>/delete">Delete</a>
+			    </div>
+			  </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

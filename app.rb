@@ -22,3 +22,5 @@ require_directory([
   'controllers',
   'routes'
 ])
+
+DataMapper.finalize
