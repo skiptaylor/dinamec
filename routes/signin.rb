@@ -14,12 +14,12 @@ post '/signin/?' do
           if 
             user.admin
             session[:admin] = user.id
-            flash[:alert] = 'Welcome admin, you are now signed in.'
+            flash[:alert] = 'Welcome, you are now signed in.'
             redirect '/dashboard'
           else
             user.customer
             session[:customer] = user.id
-            flash[:alert] = 'Welcome customer, you are now signed in.'
+            flash[:alert] = 'Welcome, you are now signed in.'
             redirect '/comingsoon'
           end
         else

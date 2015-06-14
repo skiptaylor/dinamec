@@ -4,9 +4,13 @@
 			<h2 style="font-size: 2.5em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 		</div>
 		<div class="container master-padding">
-			<p class="pull-right"><%= Time.now.strftime("%A %d %B %Y") %></p>
+			
 			<h5>Dashboard</h5>
 			<p>You can soon access current and useful information from here.</p>
+			<br />
+			<p><strong>Hello <%= @user = User.get(session[:admin]).first_name %> <%= @user = User.get(session[:admin]).last_name %></strong></p><small><%= Time.now.strftime("%A %d %B %Y") %></small>
+			<hr />
+			<h5>Manager Users</h5>
 			<p><a href="/users" class="btn btn-success btn-sm">Users</a></p>
 			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 		</div>
