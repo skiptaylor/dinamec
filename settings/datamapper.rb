@@ -12,5 +12,5 @@ configure :production do
 	# DataMapper.setup :default, "sqlite://#{Dir.pwd}/data/production.sqlite3"
 	# DataMapper.setup :default, 'mysql://username:password@host_url:3306/database_name'
 	# DataMapper.setup :default, 'postgres://username:password@host_url:5432/database_name'
-	DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_DATABASE_URL'] || 'postgres://localhost/mydb')
+	# DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_DATABASE_URL'] || 'postgres://localhost/mydb')
 end
