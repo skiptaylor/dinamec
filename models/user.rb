@@ -15,7 +15,8 @@ class User
   property  :password,    String, default: ''
   
   property  :active,    Boolean, :default => true
+  property  :admin,     Boolean, :default => true
+  property  :customer,  Boolean, :default => true
   
-  belongs_to  :customer, required: false
   
 end

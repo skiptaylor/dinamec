@@ -69,7 +69,11 @@
             </li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
+				 <% unless session[:admin] || session[:customer] %>
             <li class="<%= active 'signin' %>"><a href="signin">Sign in</a></li>
+				<% else %>
+				<li class="<%= active 'signin' %>"><a href="signout">Sign out</a></li>
+				<% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

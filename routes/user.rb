@@ -10,7 +10,6 @@ end
 
 post '/user/new/?' do
   user = User.create(
-    :customer_id  => session[:customer_id],
     :first_name   => params[:first_name], 
     :last_name    => params[:last_name],
     :title        => params[:title],
@@ -20,7 +19,10 @@ post '/user/new/?' do
     :username     => params[:username],
     :password     => params[:password]
   )
-  params[:active] ? user.update(:active => true)  : user.update(:active => false)
+  params[:active] ?     user.update(:active => true)    : user.update(:active => false)
+  params[:admin] ?      user.update(:admin => true)     : user.update(:admin => false)
+  params[:customer] ?   user.update(:customer => true)  : user.update(:customer => false)
+  
   redirect "/user/users"
 end
 
@@ -37,7 +39,6 @@ end
 post '/user/:id/edit/?' do
   user = User.get(params[:id])
   user.update(
-    :customer_id  => session[:customer_id],
     :first_name   => params[:first_name], 
     :last_name    => params[:last_name],
     :title        => params[:title],
@@ -47,7 +48,10 @@ post '/user/:id/edit/?' do
     :username     => params[:username],
     :password     => params[:password]
   )
-  params[:active] ? user.update(:active => true)  : user.update(:active => false)
+  params[:active] ?     user.update(:active => true)    : user.update(:active => false)
+  params[:admin] ?      user.update(:admin => true)     : user.update(:admin => false)
+  params[:customer] ?   user.update(:customer => true)  : user.update(:customer => false)
+  
   redirect "/user/users"
 end
 

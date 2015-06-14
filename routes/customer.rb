@@ -15,7 +15,6 @@ end
 post '/customer/new/?' do
   auth_admin
   customer = Customer.create(
-    :user_id    => session[:user_id],
     :company    => params[:company],
     :address1   => params[:address1],
     :address2   => params[:address2],
@@ -49,7 +48,6 @@ post '/customer/:id/edit/?' do
   auth_admin
   customer = Customer.get(params[:id])
   customer.update(
-    :user_id    => session[:user_id],
     :company    => params[:company], 
     :address1   => params[:address1],
     :address2   => params[:address2],

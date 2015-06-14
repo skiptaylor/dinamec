@@ -23,10 +23,10 @@
 	
 	$(document).ready(function(){
 		setTimeout(function(){
-			$("div#alert").fadeOut("slow", function() {
-			$("div#alert").remove();
+			$("#alert").fadeOut("slow", function() {
+			$("#alert").remove();
 	      });
-		}, 7000);
+		}, 4000);
 	});
 
 }).call(this);

@@ -1,0 +1,19 @@
+<div class="white-ground">
+	<div id="tag">
+		<div class="container">
+			<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+		</div>
+		<div class="container master-padding">
+			<h1>Customer Section</h1>
+			<p>The Customer section is coming soon.</p>
+			<br />
+			<p>Hello <% if session[:admin] %>
+   			 <%= @user = User.get(session[:admin]) %><br />
+				 <% elsif session[:customer] %>
+				    			 <%= @user = User.get(session[:customer]) %>
+								 <% end %><br />
+			<p>Today is <%= Time.now.strftime("%A %B %d, %Y") %></p>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+	</div>
+</div>

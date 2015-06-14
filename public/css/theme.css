@@ -102,8 +102,8 @@ ul nav .nav-tabs li	{
 	text-decoration: none;
 	background-color: transparent;
 	color: #000;
-	padding-right: 10px;
-	padding-left: 10px;
+	padding-right: 9px;
+	padding-left: 9px;
 }
 
 .navbar .nav > li > a:hover	{
@@ -482,16 +482,17 @@ table#beds tr td	{
     -moz-animation-iteration-count: 1;
     -moz-animation-timing-function: ease-in-out;
     -moz-animation-duration: 1s;
-
+	 
     -webkit-animation-name: dropHeader;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 1s;
-
+	 
     animation-name: dropHeader;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
+	 
 }
 @-moz-keyframes dropHeader {
     0% {
@@ -524,6 +525,23 @@ table#beds tr td	{
     }
 }
 
+#alert {
+	display: none;
+	position: absolute;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.6em;
+	text-shadow: -1px -1px 0px #000;
+	display: block;
+	background-color: #3aa839;
+	padding: 2px 0;
+	margin: 0px auto 0 auto;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 700;
+	z-index: 999;
+}
 
 
 

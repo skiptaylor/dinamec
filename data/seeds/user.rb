@@ -1,2 +1,6 @@
+
+User.create username: 'skip', password: 'taylor'
+User.create username: 'sam', password: 'wilkins'
+
 Customer.create company: 'New Company'
-User.create username: 'bob', password: 'bob'
+Customer.create company: 'Dinamec Systems'

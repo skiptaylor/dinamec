@@ -37,3 +37,13 @@ end
 get "/signin/?" do
   erb :"/signin"
 end
+
+get "/comingsoon/?" do
+  @user = User.all
+  erb :"/admin/comingsoon"
+end
+
+get "/dashboard/?" do
+  @user = User.all
+  erb :"/admin/dashboard"
+end

@@ -1,0 +1,30 @@
+<div class="white-ground">
+	<div id="tag">
+		<div class="container">
+			<h2 style="font-size: 2.5em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+		</div>
+		<div class="container master-padding">
+			<p class="pull-right"><%= Time.now.strftime("%A %d %B %Y") %></p>
+			<h5>Dashboard</h5>
+			<p>You can soon access current and useful information from here.</p>
+			<p><a href="/user/users" class="btn btn-success btn-sm">Users</a></p>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+	</div><%= @user_id %>
+</div>
+<script type="text/javascript">
+	$('.link-row').click(function() {
+		window.location = $(this).attr('id');
+	});
+
+	$('td.read-link[data-status="true"]').hide();
+	
+	$('#read-list-toggle button').click(function() {
+		$('#read-list-toggle button').removeClass('Unread');
+		$(this).addClass('Unread');
+		var status = $(this).attr('data-toggle');
+		$('.read-link').hide();
+		$('.read-link[data-status="' + status + '"]').show();
+		return false;
+	});
+</script>

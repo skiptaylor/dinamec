@@ -17,8 +17,6 @@ class Customer
   property  :industry,  String, default: ""
   
   property  :active,    Boolean, :default => true
-  property  :customer,  Boolean, :default => true
   
-  has n,    :users,     :constraint => :destroy
   
 end
