@@ -23,7 +23,7 @@ post '/new-user/?' do
   params[:admin] ?      user.update(:admin => true)     : user.update(:admin => false)
   params[:customer] ?   user.update(:customer => true)  : user.update(:customer => false)
   
-  redirect "/user/users"
+  redirect "/users"
 end
 
 get '/user/?' do
@@ -52,11 +52,11 @@ post '/:id/edit-user/?' do
   params[:admin] ?      user.update(:admin => true)     : user.update(:admin => false)
   params[:customer] ?   user.update(:customer => true)  : user.update(:customer => false)
   
-  redirect "/user/users"
+  redirect "/users"
 end
 
 get '/:id/delete-user/?' do
   user = User.get(params[:id])
   user.destroy
-  redirect '/user/users'
+  redirect '/users'
 end
