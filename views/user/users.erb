@@ -13,7 +13,7 @@
 						<th>Email</th>
 						<th>Phone</th>
 						<th>User</th>
-						<td align="right"><a href="/user/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
+						<td align="right"><a href="/new-user"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
 					<% @user.each do |user| %>
 					<tr>
@@ -22,7 +22,7 @@
 						<td><%= user.email %></td>
 						<td><%= user.phone1 %></td>
 						<td><%  if user.admin %>Admin<% elsif user.customer %>Customer<% else %> <% end %></td>
-						<td style="text-align: right;"><span class="under-link"><a href="/user/<%= user.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
+						<td style="text-align: right;"><span class="under-link"><a href="/<%= user.id %>/edit-user"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
 					</tr>
 					<% end %>
 				</table>
