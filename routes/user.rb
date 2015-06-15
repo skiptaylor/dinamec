@@ -10,6 +10,7 @@ end
 
 post '/new-user/?' do
   user = User.create(
+    :company_id   => params[:companyid],
     :first_name   => params[:first_name], 
     :last_name    => params[:last_name],
     :title        => params[:title],
@@ -38,6 +39,7 @@ end
 post '/:id/edit-user/?' do
   user = User.get(params[:id])
   user.update(
+    :company_id   => params[:companyid],
     :first_name   => params[:first_name], 
     :last_name    => params[:last_name],
     :title        => params[:title],

@@ -11,6 +11,7 @@
 					<tr>
 						<th class="center">Active</th>
 						<th>Name</th>
+						<th>Company</th>
 						<th>Email</th>
 						<th>Phone</th>
 						<th>User</th>
@@ -20,6 +21,13 @@
 					<tr>
 						<td class="center"><% if user.active %><span style="color: #3aa839;" class="glyphicon glyphicon-check" aria-hidden="true"></span><% else %><span style="color: #b5b5b5;" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span><% end %></td>
 						<td><%= user.first_name %> <%= user.last_name %> <small>- <%= user.title %></small></td>
+						<td>
+					  
+					  
+					  <%= user.company_id  %>
+					  
+						
+						</td>
 						<td><%= user.email %></td>
 						<td><%= user.phone1 %></td>
 						<td><%  if user.user_type == 'Admin' %>Admin<% elsif user.user_type == 'Customer' %>Customer<% else %> <% end %></td>

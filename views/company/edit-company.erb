@@ -1,0 +1,141 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<h1 style="margin-bottom: .7em;">Company</h1>
+		<div class="row">
+			<div class="col-lg-10">
+			<form class="form-horizontal" method="post">
+			  <div class="form-group">
+			    <label for="company" class="col-sm-2 control-label">Name</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="company" name="company" placeholder="Company" value="<%= @company.company %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="address1" class="col-sm-2 control-label">Address</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="address1" name="address1" placeholder="Address" value="<%= @company.address1 %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="address2" class="col-sm-2 control-label">Address</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="address2" name="address2" placeholder="Address" value="<%= @company.address2 %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="city" class="col-sm-2 control-label">City</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="city" name="city" placeholder="Phone" value="<%= @company.city %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+				  <label for="city" class="col-sm-2 control-label">State</label>
+				  <div class="col-sm-4">
+					  <select style="width: 6em;" type="text" name="state"  class="form-control">
+						  <option></option>
+						  <option value="AL" <%= 'selected' if @company.state == 'AL' %>>AL</option>
+						  <option value="AK" <%= 'selected' if @company.state == 'AK' %>>AK</option>
+						  <option value="AZ" <%= 'selected' if @company.state == 'AZ' %>>AZ</option>
+						  <option value="AR" <%= 'selected' if @company.state == 'AR' %>>AR</option>
+						  <option value="CA" <%= 'selected' if @company.state == 'CA' %>>CA</option>
+						  <option value="CO" <%= 'selected' if @company.state == 'CO' %>>CO</option>
+						  <option value="CT" <%= 'selected' if @company.state == 'CT' %>>CT</option>
+						  <option value="DE" <%= 'selected' if @company.state == 'DE' %>>DE</option>
+						  <option value="FL" <%= 'selected' if @company.state == 'FL' %>>FL</option>
+						  <option value="GA" <%= 'selected' if @company.state == 'GA' %>>GA</option>
+						  <option value="HI" <%= 'selected' if @company.state == 'HI' %>>HI</option>
+						  <option value="ID" <%= 'selected' if @company.state == 'ID' %>>ID</option>
+						  <option value="IL" <%= 'selected' if @company.state == 'IL' %>>IL</option>
+						  <option value="IN" <%= 'selected' if @company.state == 'IN' %>>IN</option>
+						  <option value="IA" <%= 'selected' if @company.state == 'IA' %>>IA</option>
+						  <option value="KS" <%= 'selected' if @company.state == 'KS' %>>KS</option>
+						  <option value="KY" <%= 'selected' if @company.state == 'KY' %>>KY</option>
+						  <option value="LA" <%= 'selected' if @company.state == 'LA' %>>LA</option>
+						  <option value="ME" <%= 'selected' if @company.state == 'ME' %>>ME</option>
+						  <option value="MD" <%= 'selected' if @company.state == 'MD' %>>MD</option>
+						  <option value="MA" <%= 'selected' if @company.state == 'MA' %>>MA</option>
+						  <option value="MI" <%= 'selected' if @company.state == 'MI' %>>MI</option>
+						  <option value="MN" <%= 'selected' if @company.state == 'MN' %>>MN</option>
+						  <option value="MS" <%= 'selected' if @company.state == 'MS' %>>MS</option>
+						  <option value="MO" <%= 'selected' if @company.state == 'MO' %>>MO</option>
+						  <option value="MT" <%= 'selected' if @company.state == 'MT' %>>MT</option>
+						  <option value="NE" <%= 'selected' if @company.state == 'NE' %>>NE</option>
+						  <option value="NV" <%= 'selected' if @company.state == 'NV' %>>NV</option>
+						  <option value="NH" <%= 'selected' if @company.state == 'NH' %>>NH</option>
+						  <option value="NJ" <%= 'selected' if @company.state == 'NJ' %>>NJ</option>
+						  <option value="NM" <%= 'selected' if @company.state == 'NM' %>>NM</option>
+						  <option value="NY" <%= 'selected' if @company.state == 'NY' %>>NY</option>
+						  <option value="NC" <%= 'selected' if @company.state == 'NC' %>>NC</option>
+						  <option value="ND" <%= 'selected' if @company.state == 'ND' %>>ND</option>
+						  <option value="OH" <%= 'selected' if @company.state == 'OH' %>>OH</option>
+						  <option value="OK" <%= 'selected' if @company.state == 'OK' %>>OK</option>
+						  <option value="OR" <%= 'selected' if @company.state == 'OR' %>>OR</option>
+						  <option value="PA" <%= 'selected' if @company.state == 'PA' %>>PA</option>
+						  <option value="RI" <%= 'selected' if @company.state == 'RI' %>>RI</option>
+						  <option value="SC" <%= 'selected' if @company.state == 'SC' %>>SC</option>
+						  <option value="SD" <%= 'selected' if @company.state == 'SD' %>>SD</option>
+						  <option value="TN" <%= 'selected' if @company.state == 'TN' %>>TN</option>
+						  <option value="TX" <%= 'selected' if @company.state == 'TX' %>>TX</option>
+						  <option value="UT" <%= 'selected' if @company.state == 'UT' %>>UT</option>
+						  <option value="VT" <%= 'selected' if @company.state == 'VT' %>>VT</option>
+						  <option value="VA" <%= 'selected' if @company.state == 'VA' %>>VA</option>
+						  <option value="WA" <%= 'selected' if @company.state == 'WA' %>>WA</option>
+						  <option value="WV" <%= 'selected' if @company.state == 'WV' %>>WV</option>
+						  <option value="WI" <%= 'selected' if @company.state == 'WI' %>>WI</option>
+						  <option value="WY" <%= 'selected' if @company.state == 'WY' %>>WY</option>
+					  </select>
+				  </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="zip" class="col-sm-2 control-label">Zip</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip" value="<%= @company.zip %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="phone" class="col-sm-2 control-label">Phone</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<%= @company.phone %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="fax" class="col-sm-2 control-label">Fax</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="fax" name="fax" placeholder="Fax" value="<%= @company.fax %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="website" class="col-sm-2 control-label">Website</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="website" name="website" placeholder="Website" value="<%= @company.website %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="industry" class="col-sm-2 control-label">Industry</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="industry" name="industry" placeholder="Industry" value="<%= @company.industry %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox" name="active" id="active" <%= 'checked="checked"' if @company.active %> /> <strong>Active</strong>
+			        </label>
+			      </div>
+			    </div>
+			  </div>
+			  <br />
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="/companies">Cancel</a> &nbsp; <a class="btn btn-sm btn-warning delete" href="/<%= @company.id %>/delete-company">Delete</a>
+			    </div>
+			  </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

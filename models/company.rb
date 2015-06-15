@@ -1,4 +1,4 @@
-class Customer
+class Company
 	include DataMapper::Resource
 
 	property   :id,         Serial
@@ -15,8 +15,9 @@ class Customer
   property  :phone,     String, default: ""
   property  :fax,       String, default: ""
   property  :industry,  String, default: ""
-  
+    
   property  :active,    Boolean, :default => true
   
+  belongs_to  :user, required: false
   
 end

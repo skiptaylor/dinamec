@@ -13,8 +13,12 @@ class User
   property  :email,       String, default: ''
   property  :username,    String, default: ''
   property  :password,    String, default: ''
-  property  :user_type,   String, default: '' 
+  property  :user_type,   String, default: ''
   
+  property  :company_id,  Integer, required: false
+    
   property  :active,    Boolean, :default => true
+  
+  has n,  :companies, required: false
   
 end
