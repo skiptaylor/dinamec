@@ -64,24 +64,28 @@
 			      </div>
 			    </div>
 			  </div>
+			  
+
+			  
 			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <div class="checkbox">
-			        <label>
-			          <input type="checkbox" name="admin" id="admin" <%= 'checked="checked"' if @user.admin %> /> <strong>Admin</strong>
-			        </label>
-			      </div>
-			    </div>
+				  <div class="col-sm-offset-2 col-sm-10">
+					  <div class="radio-inline">
+					    <label>
+					      <input type="radio" name="user_type" id="admin" value="Admin" <%= 'checked' if @user.user_type == 'Admin' %> >
+					      Admin
+					    </label>
+					  </div>
+					  <div class="radio-inline">
+					    <label>
+					      <input type="radio" name="user_type" id="customer" value="Customer" <%= 'checked' if @user.user_type == 'Customer' %> >
+					      Customer
+					    </label>
+					  </div>
+				  </div>
 			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <div class="checkbox">
-			        <label>
-			          <input type="checkbox" name="customer" id="customer" <%= 'checked="checked"' if @user.customer %> /> <strong>Customer</strong>
-			        </label>
-			      </div>
-			    </div>
-			  </div>
+			  
+			  
+
 			  <br />
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">

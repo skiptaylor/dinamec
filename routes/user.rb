@@ -17,11 +17,10 @@ post '/new-user/?' do
     :phone2       => params[:phone2],
     :email        => params[:email],
     :username     => params[:username],
-    :password     => params[:password]
+    :password     => params[:password],
+    :user_type    => params[:user_type]
   )
   params[:active] ?     user.update(:active => true)    : user.update(:active => false)
-  params[:admin] ?      user.update(:admin => true)     : user.update(:admin => false)
-  params[:customer] ?   user.update(:customer => true)  : user.update(:customer => false)
   
   redirect "/users"
 end
@@ -46,11 +45,10 @@ post '/:id/edit-user/?' do
     :phone2       => params[:phone2],
     :email        => params[:email],
     :username     => params[:username],
-    :password     => params[:password]
+    :password     => params[:password],
+    :user_type    => params[:user_type]
   )
   params[:active] ?     user.update(:active => true)    : user.update(:active => false)
-  params[:admin] ?      user.update(:admin => true)     : user.update(:admin => false)
-  params[:customer] ?   user.update(:customer => true)  : user.update(:customer => false)
   
   redirect "/users"
 end
