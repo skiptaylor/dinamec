@@ -16,9 +16,9 @@ post '/new-user/?' do
     :phone1       => params[:phone1],
     :phone2       => params[:phone2],
     :email        => params[:email],
+    :user_type    => params[:user_type],
     :username     => params[:username],
-    :password     => params[:password],
-    :user_type    => params[:user_type]
+    :password     => params[:password]
   )
   params[:active] ?     user.update(:active => true)    : user.update(:active => false)
   
@@ -44,9 +44,9 @@ post '/:id/edit-user/?' do
     :phone1       => params[:phone1],
     :phone2       => params[:phone2],
     :email        => params[:email],
+    :user_type    => params[:user_type],
     :username     => params[:username],
-    :password     => params[:password],
-    :user_type    => params[:user_type]
+    :password     => params[:password]
   )
   params[:active] ?     user.update(:active => true)    : user.update(:active => false)
   
