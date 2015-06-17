@@ -34,6 +34,10 @@ get "/contact/?" do
   erb :"/contact"
 end
 
+get "/cleaning/?" do
+  erb :"/cleaning"
+end
+
 get "/signin/?" do
   erb :"/signin"
 end
