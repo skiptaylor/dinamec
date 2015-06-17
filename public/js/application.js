@@ -27,7 +27,14 @@
 			$("#alert").remove();
 	      });
 		}, 4000);
+		
+		$('a.video-switcher').click(function()
+		{
+			var vid = $(this).attr('id');
+			$('iframe#video').attr('src', vid);
+			return false;
+		});
 	});
-
+	
 }).call(this);
 
