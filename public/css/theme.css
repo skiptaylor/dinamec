@@ -543,5 +543,47 @@ table#beds tr td	{
 	z-index: 999;
 }
 
+.ctaction	{
+	padding-top: .5em;
+	background-color: #1960af;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: 300;
+	text-shadow: -1px -1px 0px #000;
+   -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+           border-radius: 8px;
+}
 
+#primary	{
+	padding-top: 1.6em;
+	padding-bottom: 2.5em;
+	z-index: 10000;
+}
+
+#primary a.main-button	{
+	font-family: 'Open Sans', helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 1.4em;
+	line-height: 1.8em;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	padding: 2px 18px 6px 18px;
+	line-height: 32px;
+	border: none;
+	border: 3px dotted #999;
+   -webkit-border-radius: 22px;
+      -moz-border-radius: 22px;
+           border-radius: 22px;
+  -webkit-transition: 0.2s ease-in-out;
+     -moz-transition: 0.2s ease-in-out;
+       -o-transition: 0.2s ease-in-out;
+          transition: 0.2s ease-in-out;
+}
+
+#primary a.main-button:hover	{
+	border: 3px dotted yellow;
+	background-color: rgba(0, 0, 0, 0.4);
+}
 
