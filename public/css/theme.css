@@ -597,10 +597,10 @@ table#beds tr td	{
 .news-date	{
 	font-weight: 400;
 	font-size: .9em;
-	color: #868686;
+	color: #000000;
 	line-height: 14px;
 	padding: 0;
-	margin: 24px 0 9px 0;
+	margin: 24px 0 0 0;
 }
 
 .news-link	{
@@ -648,4 +648,23 @@ a.news-link:hover	{
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
      -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
          -box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+a.under-link	{
+	color: #195fae;
+	font-weight: 600;
+	text-decoration: none;
+	padding-bottom: 3px;
+	border-bottom: 1px dotted #868686;
+	line-height: 1.8em;
+    -webkit-transition: all 0.2s ease-in-out;
+       -moz-transition: all 0.2s ease-in-out;
+         -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+
+a.under-link:hover	{
+	text-decoration: none;
+	color: #a70011;
+	border-bottom: 1px solid #000000;
 }
