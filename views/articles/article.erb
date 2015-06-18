@@ -1,0 +1,20 @@
+<div id="statepoc">
+	<div class="container">
+		<div class="row">  
+			<div class="span6 offset2 well">
+				<h5 style="color: #000000; text-shadow: none;">State POC</h5>
+				<form method="post">
+					<p style="color: #000000; text-shadow: none;">
+						<label for="email">Email</label>
+						<input type="text" name="email" id="email" class="textfield span4" value="<%= @statepoc.email %>" />
+					</p>
+					<p style="color: #000000; text-shadow: none;">
+						<label for="state">State</label>
+						<input type="text" name="state" id="state" class="textfield span1" value="<%= @statepoc.state %>" />
+					</p>
+					<input class="btn btn-small btn-primary" type="submit" value="Save" /> &nbsp; <a class="btn btn-small" href="/statepocs">Cancel</a> &nbsp; <a class="btn btn-small btn-warning pull-right" href="/statepocs/<%= @statepoc.id %>/delete">Delete</a>
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>

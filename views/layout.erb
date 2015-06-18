@@ -51,20 +51,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<%= active 'index' %>"><a href="index">About Us</a></li>
-            <li class="<%= active 'industries' %>"><a href="industries">Industries</a></li>
-            <li class="<%= active 'product' %>"><a href="product">Product Line</a></li>
-				<li class="<%= active 'process' %>"><a href="process">The Process</a></li>
-				<li class="<%= active 'service' %>"><a href="service">Service</a></li>
-				<li class="<%= active 'customers' %>"><a href="customers">Customers</a></li>
-				<li class="<%= active 'news' %>"><a href="news">News</a></li>
-				<li class="<%= active 'contact' %>"><a href="contact">Contact Us</a></li>
+            <li class="<%= active 'index' %>"><a href="/index">About Us</a></li>
+            <li class="<%= active 'industries' %>"><a href="/industries">Industries</a></li>
+            <li class="<%= active 'product' %>"><a href="/product">Product Line</a></li>
+				<li class="<%= active 'process' %>"><a href="/process">The Process</a></li>
+				<li class="<%= active 'service' %>"><a href="/service">Service</a></li>
+				<li class="<%= active 'customers' %>"><a href="/customers">Customers</a></li>
+				<li class="<%= active 'news' %>"><a href="/news/articles">News</a></li>
+				<li class="<%= active 'contact' %>"><a href="/contact">Contact Us</a></li>
             <% if session[:admin] %>
-				<li class="dropdown <%= active ['dashboard', 'user', 'companies', 'news'] %>">
+				<li class="dropdown <%= active ['dashboard', 'user', 'companies', 'articles'] %>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li class="<%= active 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
-					 <li class="<%= active 'news' %>"><a href="/dashboard">News</a></li>
+					 <li class="<%= active 'articles' %>"><a href="/articles/articles">Articles</a></li>
                 <li class="divider"></li>
                 <li class="<%= active 'user' %>"><a href="/users">Users</a></li>
 					 <li class="<%= active 'companies' %>"><a href="/companies">Companies</a></li>
@@ -74,9 +74,9 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 				 <% unless session[:admin] || session[:customer] %>
-            <li class="<%= active 'signin' %>"><a href="signin">Sign in</a></li>
+            <li class="<%= active 'signin' %>"><a href="/signin">Sign in</a></li>
 				<% else %>
-				<li class="<%= active 'signin' %>"><a href="signout">Sign out</a></li>
+				<li class="<%= active 'signin' %>"><a href="/signout">Sign out</a></li>
 				<% end %>
           </ul>
         </div><!--/.nav-collapse -->
@@ -110,11 +110,11 @@
 						 <p>Contact us for more information or an on site evaluation of how the <b>Dinamec Systems Fluid Clean</b> can be of use to your particular industry or production process. You can also let us prove our cleaning efficiency by sending parts for a trial cleaning at our testing facility in Acworth, Georgia.</p>
 						 <hr />
 		 				<p><strong>Exclusive North American distributor of Schwing Technologies</strong></p>
-		 				<a href="http://www.schwing-technologies.com" target="blank"><img src="img/schwing.png" style="border: 1px solid margin-left: 24px; #b2b5bc;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);" /></a>
+		 				<a href="http://www.schwing-technologies.com" target="blank"><img src="/img/schwing.png" style="border: 1px solid margin-left: 24px; #b2b5bc;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);" /></a>
 					 	</div>
 					</div>
 				</div>
 			</div>
-		</div></div>
+		</div>
 	</body>
 </html>

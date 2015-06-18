@@ -1,0 +1,66 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<h1 style="margin-bottom: .7em;">News Article</h1>
+		<div class="row">
+			<div class="col-lg-12">
+			<form class="form-horizontal" method="post">
+				<div class="control-group">
+	 			  <div class="form-group">
+	 			    <label for="date" class="col-sm-2 control-label">Date</label>
+	 			    <div class="col-sm-4">
+	 			      <input type="text" class="form-control" id="date" name="date" placeholder="Date" value="<%= @article.date %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="title" class="col-sm-2 control-label">Title</label>
+	 			    <div class="col-sm-8">
+	 			      <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="<%= @article.title %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="author" class="col-sm-2 control-label">Author</label>
+	 			    <div class="col-sm-4">
+	 			      <input type="text" class="form-control" id="author" name="author" placeholder="Author" value="<%= @article.author %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="content" class="col-sm-2 control-label">Content</label>
+	 			    <div class="col-sm-10">
+	 			      <textarea type="text" class="form-control" id="content" name="content" rows="20" placeholder="Content"><%= @article.content %></textarea>
+	 			    </div>
+	 			  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <div class="checkbox">
+				        <label>
+				          <input type="checkbox" name="active" id="active" <%= 'checked="checked"' if @article.active %> /> <strong>Active</strong>
+				        </label>
+				      </div>
+				    </div>
+				  </div>
+				  <br />
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="/articles/articles">Cancel</a> &nbsp; <a class="btn btn-sm btn-warning delete" href="/articles/<%= @article.id %>/delete">Delete</a>
+				    </div>
+				  </div>
+			  </div>
+			</form>	
+			<div>
+				<br />
+				<p style="color: #000000; text-shadow: none;"><small>Emphasis, aka italics, with *asterisks* or _underscores_. &nbsp;&nbsp;&nbsp;&nbsp;=>&nbsp;&nbsp;&nbsp;&nbsp;Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</small></p>
+
+				<p style="color: #000000; text-shadow: none;"><small>Strong emphasis, aka bold, with **asterisks** or __underscores__. &nbsp;&nbsp;&nbsp;&nbsp;=>&nbsp;&nbsp;&nbsp;&nbsp;Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</small></p>
+
+				<p style="color: #000000; text-shadow: none;"><small>Combined emphasis with **asterisks and _underscores_**. &nbsp;&nbsp;&nbsp;&nbsp;=>&nbsp;&nbsp;&nbsp;&nbsp;Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</small></p>
+				<br />
+				<a href="http://support.mashery.com/docs/customizing_your_portal/Markdown_Cheat_Sheet" class="btn btn-small btn-info btn-sm" target="blank">Markdown cheat sheet</a>
+				
+				<br >
+			</div>
+		</div>
+	</div>
+</div>

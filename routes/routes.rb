@@ -27,7 +27,18 @@ get '/customers/?' do
 end
 
 get '/news/?' do
-  erb :"/news"
+	@article = Article.all(:order => :date.desc)
+	erb :'/news'
+end
+
+get '/news/articles/?' do
+  @article = Article.last
+  erb :'/news'
+end
+
+get '/news/:id?' do
+  @article = Article.get(params[:id])
+  erb :'/news'
 end
 
 get "/contact/?" do
@@ -51,3 +62,4 @@ get "/dashboard/?" do
   @user = User.all
   erb :"/admin/dashboard"
 end
+
