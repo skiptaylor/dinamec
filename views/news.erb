@@ -10,12 +10,12 @@
 				<div class="col-md-4" style="margin-top: 0; margin-bottom: 3em;">
 					<h1>News</h1>
 					<% Article.all.sort{|a,b| b.date <=> a.date}.each do |article| %>
-						<p class="news-date"><%= article.date %></p>
+						<p class="news-date"><%= article.date.strftime("%B %d, %Y") %></p>
 						<a href="<%= article.id %>" class="news-link under-link"><%= article.title %></a>
 					<% end %>
 				</div>
 				<div class="col-md-8" style="margin-top: 3em; margin-bottom: 3em;">
-					<p><small><%= @article.date %></small></p>
+					<p><%= @article.date.strftime("%B %d, %Y") %></p>
 					<hr />
 					<h4 style="font-size: 2em;"><%= @article.title %></h4>
 					<% unless @article.author == "" %>
