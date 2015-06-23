@@ -12,6 +12,7 @@ end
 
 post '/new-company/?' do
   company = Company.create(
+    :machine_id => params[:machineid],
     :company    => params[:company],
     :address1   => params[:address1],
     :address2   => params[:address2],
@@ -42,6 +43,7 @@ end
 post '/:id/edit-company/?' do
   company = Company.get(params[:id])
   company.update(
+    :machine_id => params[:machineid],
     :company    => params[:company], 
     :address1   => params[:address1],
     :address2   => params[:address2],

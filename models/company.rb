@@ -18,6 +18,9 @@ class Company
     
   property  :active,    Boolean, :default => true
   
-  belongs_to  :user, required: false
+  property  :machine_id,  Integer, required: false
+  
+  belongs_to  :user,      required: false
+  has n,      :machines,  required: false
   
 end
