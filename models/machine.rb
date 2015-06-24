@@ -5,8 +5,9 @@ class Machine
 	property   :deleted_at, ParanoidDateTime
 	timestamps :at
   
-  property  :name,        String, default: ""
+  property  :name,      String, default: ""
     
   belongs_to  :company, required: false
+  has n,      :parts,   required: false
   
 end

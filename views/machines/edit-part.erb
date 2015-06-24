@@ -1,0 +1,55 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<h1 style="margin-bottom: .7em;">Machine Part</h1>
+		<div class="row">
+			<div class="col-lg-10">
+			<form class="form-horizontal" method="post">
+			  <div class="form-group">
+			    <label for="part" class="col-sm-2 control-label">Part</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="part" name="part" placeholder="Machine Part" value="<%= @part.part %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="quantity" class="col-sm-2 control-label">Quantity</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity" value="<%= @part.quantity %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="part_number" class="col-sm-2 control-label">Part Number</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="part_number" name="part_number" placeholder="Part Number" value="<%= @part.part_number %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="description" class="col-sm-2 control-label">Description</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="<%= @part.description %>">
+			    </div>
+			  </div>
+			  <div class="form-group">
+				  <label for="company" class="col-sm-2 control-label">Machine</label>
+				  <div class="col-sm-4">
+					  <select type="text" id="companyid" name="companyid" class="form-control">
+						  <% @machine = Machine.all %>
+						  <% @machine.each do |machine| %>
+						  <option value="<%= machine.id %>" <%= 'selected' if @part.machine_id == machine.id %>><%= machine.name %></option>
+						  <% end %>
+					  </select>
+				  </div>
+			  </div>
+			  <br />
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="/machines/parts">Cancel</a> &nbsp; <a class="btn btn-sm btn-warning delete" href="/machines/<%= @part.id %>/delete-part">Delete</a>
+			    </div>
+			  </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
