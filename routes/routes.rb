@@ -74,7 +74,7 @@ post '/cleaning/?' do
     :company      => params[:company],
     :email        => params[:email],
     :phone        => params[:phone],
-    :comment      => params[:comment]
+    :description  => params[:description]
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
