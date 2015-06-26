@@ -1,0 +1,62 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<h1 style="margin-bottom: .7em;">Contact</h1>
+		<div class="row">
+			<div class="col-lg-12">
+			<form class="form-horizontal" method="post">
+				<div class="control-group">
+					
+	 			  <div class="form-group">
+	 			    <label for="name" class="col-sm-2 control-label">Name</label>
+	 			    <div class="col-sm-8">
+	 			      <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<%= @contact.name %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="company" class="col-sm-2 control-label">Company</label>
+	 			    <div class="col-sm-4">
+	 			      <input type="text" class="form-control" id="company" name="company" placeholder="Company" value="<%= @contact.company %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="email" class="col-sm-2 control-label">Email</label>
+	 			    <div class="col-sm-4">
+	 			      <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= @contact.email %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="phone" class="col-sm-2 control-label">Phone</label>
+	 			    <div class="col-sm-4">
+	 			      <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<%= @contact.phone %>">
+	 			    </div>
+	 			  </div>
+	 			  <div class="form-group">
+	 			    <label for="content" class="col-sm-2 control-label">Comment</label>
+	 			    <div class="col-sm-10">
+	 			      <textarea type="text" class="form-control" id="content" name="content" rows="20" placeholder="Content"><%= @contact.comment %></textarea>
+	 			    </div>
+	 			  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <div class="checkbox">
+				        <label>
+				          <input type="checkbox" name="archive" id="archive" <%= 'checked="checked"' if @contact.archive %> /> <strong>Archive</strong>
+				        </label>
+				      </div>
+				    </div>
+				  </div>
+				  <br />
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="/dashboard">Cancel</a> &nbsp; <a class="btn btn-sm btn-warning delete" href="/contacts/<%= @contact.id %>/delete">Delete</a>
+				    </div>
+				  </div>
+			  </div>
+			</form>	
+			
+		</div>
+	</div>
+</div>

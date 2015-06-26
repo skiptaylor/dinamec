@@ -42,11 +42,43 @@ get '/news/:id?' do
 end
 
 get "/contact/?" do
+  @contact = Contact.new
   erb :"/contact"
 end
 
+post '/contact/?' do
+  contact = Contact.create(
+    :name         => params[:name],
+    :company      => params[:company],
+    :email        => params[:email],
+    :phone        => params[:phone],
+    :comment      => params[:comment]
+  )
+  params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
+  
+  redirect '/contacts/thank-you'
+end
+
+get "/contacts/thank-you/?" do
+  erb :"/contacts/thank-you"
+end
+
 get "/cleaning/?" do
+  @contact = Contact.new
   erb :"/cleaning"
+end
+
+post '/cleaning/?' do
+  contact = Contact.create(
+    :name         => params[:name],
+    :company      => params[:company],
+    :email        => params[:email],
+    :phone        => params[:phone],
+    :comment      => params[:comment]
+  )
+  params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
+  
+  redirect '/contacts/thank-you'
 end
 
 get "/signin/?" do
@@ -60,6 +92,7 @@ end
 
 get "/dashboard/?" do
   @user = User.all
+  @contact = Contact.all
   erb :"/admin/dashboard"
 end
 
