@@ -69,6 +69,12 @@
               </ul>
             </li>
 				<% end %>
+				
+            <% if session[:customer] %>
+				<li class="<%= active 'comingsoon' %>"><a href="/comingsoon">Customer</a></li>
+				<% end %>
+				
+				
           </ul>
           <ul class="nav navbar-nav navbar-right">
 				 <% unless session[:admin] || session[:customer] %>

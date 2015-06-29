@@ -1,14 +1,17 @@
 get '/users/?' do
+  auth_admin
   @user = User.all
   erb :'/user/users'
 end
 
 get '/new-user/?' do
+  auth_admin
   @user = User.new
   erb :'/user/edit'
 end
 
 post '/new-user/?' do
+  auth_admin
   user = User.create(
     :company_id   => params[:companyid],
     :first_name   => params[:first_name], 
@@ -27,16 +30,19 @@ post '/new-user/?' do
 end
 
 get '/user/?' do
+  auth_admin
   @user = User.get(params[:id])
   erb :'/user/user'
 end
 
 get '/:id/edit-user/?' do
+  auth_admin
   @user = User.get(params[:id])
   erb :'/user/edit'
 end
 
 post '/:id/edit-user/?' do
+  auth_admin
   user = User.get(params[:id])
   user.update(
     :company_id   => params[:companyid],
@@ -56,6 +62,7 @@ post '/:id/edit-user/?' do
 end
 
 get '/:id/delete-user/?' do
+  auth_admin
   user = User.get(params[:id])
   user.destroy
   redirect '/users'

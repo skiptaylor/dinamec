@@ -1,16 +1,19 @@
 get '/companies/?' do
+  auth_admin
   @user = User.get(session[:user])
   @company = Company.all
   erb :'/company/companies'
 end
 
 get '/new-company/?' do
+  auth_admin
   @user = User.get(session[:user])
   @company = Company.new
   erb :'/company/edit-company'
 end
 
 post '/new-company/?' do
+  auth_admin
   company = Company.create(
     :machine_id => params[:machineid],
     :company    => params[:company],
@@ -29,18 +32,21 @@ post '/new-company/?' do
 end
 
 get '/company/?' do
+  auth_admin
   @user = User.get(session[:user])
   @company = Company.get(params[:id])
   erb :'/company/company'
 end
 
 get '/:id/edit-company/?' do
+  auth_admin
   @user = User.get(session[:user])
   @company = Company.get(params[:id])
   erb :'/company/edit-company'
 end
 
 post '/:id/edit-company/?' do
+  auth_admin
   company = Company.get(params[:id])
   company.update(
     :machine_id => params[:machineid],
@@ -60,6 +66,7 @@ post '/:id/edit-company/?' do
 end
 
 get '/:id/delete-company/?' do
+  auth_admin
   user = User.get(session[:user])
   company = Company.get(params[:id])
   company.destroy

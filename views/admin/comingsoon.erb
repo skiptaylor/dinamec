@@ -5,15 +5,16 @@
 		</div>
 		<div class="container master-padding">
 			<h1>Customer Section</h1>
-			<p>The Customer section is coming soon.</p>
-			<br />
-			<p>Hello <% if session[:admin] %>
-   			 <%= @user = User.get(session[:admin]) %><br />
+			<hr />
+			<h5>Hello <% if session[:admin] %>
+   			 <%= @user = User.get(session[:admin]).first_name %><br />
 				 <% elsif session[:customer] %>
-				    			 <%= @user = User.get(session[:customer]) %>
-								 <% end %><br />
+				 <%= @user = User.get(session[:customer]).first_name %><br />
+				 <% end %>
+			</h5>
+			<p>The Customer section is in development.</p>
 			<p>Today is <%= Time.now.strftime("%A %B %d, %Y") %></p>
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 		</div>
 	</div>
 </div>

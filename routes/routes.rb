@@ -86,11 +86,13 @@ get "/signin/?" do
 end
 
 get "/comingsoon/?" do
+  auth_customer
   @user = User.all
   erb :"/admin/comingsoon"
 end
 
 get "/dashboard/?" do
+  auth_admin
   @user = User.all
   @contact = Contact.all
   erb :"/admin/dashboard"
