@@ -9,7 +9,9 @@ class Part
   property  :quantity,        String, default: ""
   property  :part_number,     String, default: ""
   property  :part,            String, default: ""
+  
+  property  :machine_id,  Integer, required: false
     
-  belongs_to  :machine, required: false
+  belongs_to  :machine
   
 end

@@ -1,36 +1,36 @@
 get '/machines/machines?' do
   auth_admin
-  @company = Company.all
+  @company = Company.get(params[:company_id])
   @machine = Machine.all
   erb :'/machines/machines'
 end
 
 get '/machines/new-machine/?' do
   auth_admin
-  @company = Company.all
+  @company = Company.get(params[:company_id])
   @machine = Machine.new
   erb :'/machines/edit-machine'
 end
 
 post '/machines/new-machine/?' do
   auth_admin
-  @machine = Machine.create(
+  machine = Machine.create(
     :name           => params[:name],
     :company_id     => params[:companyid]
   )
   redirect "/machines/machines"
 end
 
-get '/machines/machine/?' do
-  auth_admin
-  @company = Company.all
-  @machine = Machine.get(params[:id])
-  erb :'/machines/machine'
-end
+# get '/machines/machine/?' do
+#   auth_admin
+#   @company = Company.all
+#   @machine = Machine.get(params[:id])
+#   erb :'/machines/machine'
+# end
 
 get '/machines/:id/edit-machine/?' do
   auth_admin
-  @company = Company.all
+  @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:id])
   erb :'/machines/edit-machine'
 end
@@ -47,7 +47,7 @@ end
 
 get '/machines/:id/delete-machine/?' do
   auth_admin
-  company = Company.all
+  company = Company.get(params[:company_id])
   machine = Machine.get(params[:id])
   machine.destroy
   redirect '/machines/machines'

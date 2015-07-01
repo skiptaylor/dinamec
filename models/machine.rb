@@ -6,8 +6,11 @@ class Machine
 	timestamps :at
   
   property  :name,      String, default: ""
-    
-  belongs_to  :company, required: false
-  has n,      :parts,   required: false
+  
+  property  :part_id,     Integer, required: false
+  property  :company_id,  Integer, required: false
+   
+  belongs_to  :company
+  has n,      :parts,   :constraint => :destroy
   
 end

@@ -17,9 +17,8 @@ class Company
   property  :industry,  String, default: ""
     
   property  :active,    Boolean, :default => true
-  
-  property  :machine_id,  Integer, required: false
-  
+  property  :user_id,   Integer
+    
   belongs_to  :user,      required: false
   has n,      :machines,  required: false
   

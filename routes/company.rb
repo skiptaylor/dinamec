@@ -15,7 +15,6 @@ end
 post '/new-company/?' do
   auth_admin
   company = Company.create(
-    :machine_id => params[:machineid],
     :company    => params[:company],
     :address1   => params[:address1],
     :address2   => params[:address2],
@@ -25,7 +24,8 @@ post '/new-company/?' do
     :website    => params[:website],
     :phone      => params[:phone],
     :fax        => params[:fax],
-    :industry   => params[:industry]
+    :industry   => params[:industry],
+    :user_id    => params[:userid]
   )
   params[:active] ? company.update(:active => true)  : company.update(:active => false)
   redirect "/companies"
@@ -49,7 +49,6 @@ post '/:id/edit-company/?' do
   auth_admin
   company = Company.get(params[:id])
   company.update(
-    :machine_id => params[:machineid],
     :company    => params[:company], 
     :address1   => params[:address1],
     :address2   => params[:address2],
@@ -59,7 +58,8 @@ post '/:id/edit-company/?' do
     :website    => params[:website],
     :phone      => params[:phone],
     :fax        => params[:fax],
-    :industry   => params[:industry]
+    :industry   => params[:industry],
+    :user_id    => params[:userid]
   )
   params[:active] ? company.update(:active => true)  : company.update(:active => false)
   redirect "/companies"

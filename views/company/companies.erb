@@ -19,7 +19,7 @@
 					<% @company.each do |company| %>
 					<tr>
 						<td class="center"><% if company.active %><span style="color: #3aa839;" class="glyphicon glyphicon-check" aria-hidden="true"></span><% else %><span style="color: #b5b5b5;" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span><% end %></td>
-						<td><strong><%= company.company %></strong></td>
+						<td><strong><%= company.company %></strong> <small><%= company.id %></small></td>
 						<td><%= company.website %></td>
 						<td><%= company.phone %></td>
 						<td><%= company.industry %></td>

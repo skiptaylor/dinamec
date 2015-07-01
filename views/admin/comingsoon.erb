@@ -7,9 +7,9 @@
 			<h1>Customer Section</h1>
 			<hr />
 			<h5>Hello <% if session[:admin] %>
-   			 <%= @user = User.get(session[:admin]).first_name %><br />
+   			 <%= @user = User.get(session[:admin]).first_name %> <%= @user = User.get(session[:admin]).last_name %><br />
 				 <% elsif session[:customer] %>
-				 <%= @user = User.get(session[:customer]).first_name %><br />
+				 <%= @user = User.get(session[:customer]).first_name %> <%= @user = User.get(session[:customer]).last_name %><br />
 				 <% end %>
 			</h5>
 			<p>The Customer section is in development.</p>

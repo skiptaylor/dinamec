@@ -1,18 +1,18 @@
-get '/machines/parts?' do
+get '/parts/parts?' do
   auth_admin
-  @machine = Machine.all
+  @machine = Machine.get(params[:machine_id])
   @part = Part.all
-  erb :'/machines/parts'
+  erb :'/parts/parts'
 end
 
-get '/machines/new-part/?' do
+get '/parts/new-part/?' do
   auth_admin
-  @machine = Machine.all
+  @machine = Machine.get(params[:machine_id])
   @part = Part.new
-  erb :'/machines/edit-part'
+  erb :'/parts/edit-part'
 end
 
-post '/machines/new-part/?' do
+post '/parts/new-part/?' do
   auth_admin
   @part = Part.create(
     :part           => params[:part],
@@ -21,24 +21,24 @@ post '/machines/new-part/?' do
     :description    => params[:description],
     :machine_id     => params[:machineid]
   )
-  redirect "/machines/parts"
+  redirect "/parts/parts"
 end
 
-get '/machines/part/?' do
+# get '/machines/:machine_id/parts/part/?' do
+#   auth_admin
+#   @machine = Machine.get(params[:machine_id])
+#   @part = Part.get(params[:id])
+#   erb :'/parts/part'
+# end
+
+get '/parts/:id/edit-part/?' do
   auth_admin
-  @machine = MAchine.all
+  @machine = Machine.get(params[:machine_id])
   @part = Part.get(params[:id])
-  erb :'/machines/part'
+  erb :'/parts/edit-part'
 end
 
-get '/machines/:id/edit-part/?' do
-  auth_admin
-  @machine = Machine.all
-  @part = Part.get(params[:id])
-  erb :'/machines/edit-part'
-end
-
-post '/machines/:id/edit-part/?' do
+post '/parts/:id/edit-part/?' do
   auth_admin
   part = Part.get(params[:id])
   part.update(
@@ -48,13 +48,13 @@ post '/machines/:id/edit-part/?' do
     :description    => params[:description],
     :machine_id     => params[:machineid]
   )
-  redirect '/machines/parts'
+  redirect "/parts/parts"
 end
 
-get '/machines/:id/delete-part/?' do
+get '/parts/:id/delete-part/?' do
   auth_admin
-  machine = Machine.all
+  machine = Machine.get(params[:machine_id])
   part = Part.get(params[:id])
   part.destroy
-  redirect '/machines/parts'
+  redirect "/machines/#{params[:machine_id]}/parts/parts"
 end

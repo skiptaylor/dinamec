@@ -13,11 +13,9 @@
 
 						<td align="right"><a href="/machines/new-machine"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
+					<% @company = Company.get(params[:comapny_id]) %>
 					<% @machine.each do |machine| %>
-					<tr>
-						
-						<td><strong><%= machine.name %></strong></td>
-
+								<td><%= machine.name %> <small></small></td>
 						<td style="text-align: right;"><span class="under-link"><a href="/machines/<%= machine.id %>/edit-machine"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
 					</tr>
 					<% end %>
@@ -26,3 +24,5 @@
 		</div>
 	</div>
 </div>
+
+
