@@ -3,27 +3,32 @@
 		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 	</div>
 	<div class="container master-padding">
-		<h1 style="margin-bottom: .7em;"><%= @machine = Machine.get(params[:machine_id]) %> Parts <small></small></h1>
+		<p class="pull-right"><a class="btn btn-sm btn-default" href="/machines/machines">Machines</a> &nbsp; <a class="btn btn-sm btn-default" href="/dashboard">Dashboard</a></p>
+		<h1 style="margin-bottom: .7em;"><%= @machine = Machine.get(params[:id]).name %> Parts <small></small></h1>
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table table-striped table-condensed table-bordered table-hover">
+					<% @machine = Machine.get(params[:id]) %>
 					<tr>
-						<td><small>Machine</small></td>
+						<td> </td>
 						<th>Part</th>
 						<th style="text-align: center;">Qty</th>
 						<th>Part Number</th>
 						<th>Description</th>
-						<td style="text-align: right;"><a href="/parts/new-part"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
+						<td style="text-align: center;"><a href="/machines/<%= @machine.id %>/new-part"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
+					<% @machine = Machine.get(params[:id]) %>
 					<% @part.each do |part| %>
+					<% if part.machine_id == @machine.id %>
 					<tr>
-						<td><small><%= part.machine_id %></small></td>
+						<td><small class="temp"><%= part.machine_id %></small></td>
 						<td><%= part.part %></td>
 						<td style="text-align: center;"><%= part.quantity %></td>
 						<td><%= part.part_number %></td>
 						<td><%= part.description %></td>
-						<td style="text-align: right;"><span class="under-link"><a href="/parts/<%= part.id %>/edit-part"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
+						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= @machine.id %>/parts/<%= part.id %>/edit-part"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span> &nbsp; &nbsp; <span class="under-link"><a href="/machines/<%= @machine.id %>/parts/<%= part.id %>/delete-part" class="delete"><span class="glyphicon glyphicon-trash orange" aria-hidden="true"></span></a></span></td>
 					</tr>
+					<% end %>
 					<% end %>
 				</table>
 			</div>

@@ -45,7 +45,7 @@
 			  <br />
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="/parts/parts">Cancel</a> &nbsp; <a class="btn btn-sm btn-warning delete" href="/parts/<%= @part.id %>/delete-part">Delete</a>
+			      <button type="submit" class="btn btn-success btn-sm">Save</button> &nbsp; <a class="btn btn-sm btn-default" href="<%= request.referrer %>">Cancel</a> <!-- &nbsp; <a class="btn btn-sm btn-warning delete" href="">Delete</a> -->
 			    </div>
 			  </div>
 			</form>

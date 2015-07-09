@@ -52,3 +52,11 @@ get '/machines/:id/delete-machine/?' do
   machine.destroy
   redirect '/machines/machines'
 end
+
+get '/machines/:id/machine/?' do
+  auth_admin
+  @company = Company.get(params[:company_id])
+  @machine = Machine.get(params[:id])
+  erb :'/machines/machine'
+end
+

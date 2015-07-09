@@ -1,0 +1,33 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<p class="pull-right"><a class="btn btn-sm btn-default" href="/machines/machines">Machines</a> &nbsp; <a class="btn btn-sm btn-default" href="/dashboard">Dashboard</a></p>
+		<h1 style="margin-bottom: .7em;">Machine</h1>
+		<hr />
+		<div class="row">
+			
+			<div class="col-md-8">
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3 control-label">Machine Name</label>
+			    <div>
+			      <%= @machine.name %> <small class="temp"><%= @machine.id %></small>
+			    </div>
+			  </div>
+			  <div class="form-group">
+				  <label for="company" class="col-sm-3 control-label">Company</label>
+				  <div>
+						  <% @company = Company.all %>
+						  <% @company.each do |company| %>
+						  <% if @machine.company_id == company.id %><%= company.company %> <small class="temp"><%= company.id %></small><% end %>
+						  <% end %>
+				  </div>
+			  </div>
+			</div>
+			<div class="col-md-4">
+				<a href="/machines/<%= @machine.id %>/parts" class="btn btn-primary btn-sm">Manage Parts</a>
+			</div>
+		</div>
+	</div>
+</div>
