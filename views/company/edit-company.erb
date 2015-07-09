@@ -156,14 +156,13 @@
 						<% end %>
 						<% end %>
 				</table>
-				<a href="/users/users" class="btn btn-default btn-sm pull-right">Manage Users</a>
+				<a href="/users" class="btn btn-default btn-sm pull-right">Manage Users</a>
 				<br /><br />
 				<h1 style="margin-bottom: .7em;">Machines</h1>
 				<table class="table table-striped table-condensed table-hover table-bordered">
 					<tr>
 						<th>Machine Name</th>
 						<th class="center">Edit</th>
-						<th class="center">Parts</th>
 					</tr>
 					<% @machine = Machine.all %>
 					<% @machine.each do |machine| %>
@@ -172,7 +171,6 @@
 						
 						<td><%= machine.name %></td>
 						<td class="center"><a href="/machines/<%= machine.id %>/edit-machine"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
-						<td class="center"><a href="/parts/parts">Manage Parts</a></td>
 					</tr>
 					<% end %>
 					<% end %>
