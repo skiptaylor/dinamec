@@ -1,0 +1,42 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<p class="pull-right"><%= Time.now.strftime("%A %d %B %Y") %></p>
+		<h1>Profile</h1>
+		<hr />
+		<div class="row">
+			<% if session[:customer] %>
+			<div class="col-md-6">
+				<h6><%= @user = User.get(session[:customer]).first_name %> <%= @user = User.get(session[:customer]).last_name %></h6>
+				<% @company.each do |company| %>
+					<% if (@user = User.get(session[:customer]).company_id) == company.id %>
+						<br />
+						<h5><%= company.company %></h5>
+						<p>
+							<%= company.address1 %><br />
+							<% unless company.address2 == "" %><%= company.address2 %><br /><% end %>
+							<%= company.city %> <%= company.state %> <%= company.zip %><br /><br />
+							<% unless company.phone == "" %><%= company.phone %> &nbsp; <small>PHONE</small><br /><% end %>
+							<% unless company.fax == "" %><%= company.fax %> &nbsp; <small>FAX</small><br /><% end %>
+							<% unless company.website == "" %><%= company.website %><% end %>
+						</p>
+			</div>
+			<div class="col-md-6">
+						<p>
+							<% @machine.each do |machine| %>
+								<% if machine.company_id == company.id %>
+									<h5>Machines</h5>
+									<%= machine.name %>
+								<% end %>
+							<% end %>
+						</p>
+					<% end %>
+				<% end %>
+				
+				
+			<% end %>
+		</div>
+	</div>
+</div>

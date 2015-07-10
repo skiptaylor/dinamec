@@ -20,7 +20,7 @@ post '/signin/?' do
             user.user_type == 'Customer'
             session[:customer] = user.id
             flash[:alert] = 'Welcome, you are now signed in.'
-            redirect '/comingsoon'
+            redirect '/profile'
           end
         else
           flash[:alert] = 'Username/password combo does not match. Try again.'

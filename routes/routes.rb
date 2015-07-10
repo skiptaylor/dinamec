@@ -85,12 +85,6 @@ get "/signin/?" do
   erb :"/signin"
 end
 
-get "/comingsoon/?" do
-  auth_customer
-  @user = User.all
-  erb :"/admin/comingsoon"
-end
-
 get "/dashboard/?" do
   auth_admin
   @user = User.all

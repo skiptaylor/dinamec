@@ -31,10 +31,11 @@ post '/new-company/?' do
   redirect "/companies"
 end
 
-get '/company/?' do
-  auth_admin
-  @user = User.get(session[:user])
-  @company = Company.get(params[:id])
+get '/profile/?' do
+  auth_customer
+  @company = Company.all
+  @user = User.get(session[:customer])
+  @machine = Machine.all
   erb :'/company/company'
 end
 
