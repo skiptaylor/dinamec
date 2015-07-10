@@ -28,12 +28,15 @@
 							<% @machine.each do |machine| %>
 								<% if machine.company_id == company.id %>
 									<h5>Machines</h5>
-									<%= machine.name %>
+									<%= machine.name %> &nbsp; <a href="" class="btn btn-xs btn-primary">Order Parts</a>
 								<% end %>
 							<% end %>
 						</p>
 					<% end %>
 				<% end %>
+				<br />
+				<h5>History</h5>
+				
 				
 				
 			<% end %>
