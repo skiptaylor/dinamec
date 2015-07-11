@@ -50,6 +50,19 @@ post '/machines/:machine_id/parts/:id/edit-part/?' do
   redirect "/machines/#{params[:machine_id]}/parts"
 end
 
+
+
+get '/machines/:id/order-part/?' do
+  auth_customer
+  @company = Company.get(params[:company_id])
+  @machine = Machine.get(params[:machine_id])
+  @part = Part.all
+  erb :'/parts/order-part'
+end
+
+
+
+
 get '/machines/:machine_id/parts/:id/delete-part/?' do
   auth_admin
   company = Company.get(params[:company_id])

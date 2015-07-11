@@ -71,7 +71,7 @@
 				<% end %>
 				
             <% if session[:customer] %>
-				<li class="<%= active 'profile' %>"><a href="/profile">Profile</a></li>
+				<li class="<%= active ['profile', 'order', 'history'] %>"><a href="/profile">Profile</a></li>
 				<% end %>
 				
 				
