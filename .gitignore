@@ -4,3 +4,5 @@
 /log/*
 !/log/messages.log
 .sass-cache
+
+*.sqlite3
