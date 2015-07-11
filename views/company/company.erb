@@ -25,8 +25,7 @@
 			</div>
 			<div class="col-md-6">
 				<h5>Machines</h5>
-				<table class="table table-striped table-condensed">
-						
+						<table class="table table-striped table-condensed">
 							<% @machine.each do |machine| %>
 								<% if machine.company_id == company.id %>
 								<tr>	
@@ -39,15 +38,13 @@
 					<% end %>
 				<% end %>
 				<br />
-				<h5>History</h5>
+				<h5>Order History</h5>
 				<table class="table table-striped table-condensed">
 					<tr>
 						<td>Fake -> <%= Time.now.strftime("%A %d %B %Y") %></td>
 						<td style="text-align: center;"><span class="under-link"><a href=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
 					</tr>
 				</table>
-					
-				
 			<% end %>
 		</div>
 	</div>

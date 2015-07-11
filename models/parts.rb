@@ -15,3 +15,18 @@ class Part
   belongs_to  :machine
   
 end
+
+class Order
+  include DataMapper::Resource
+  
+	property   :id,         Serial
+	property   :deleted_at, ParanoidDateTime
+	timestamps :at
+  
+  property  :quantity,  Integer, required: false
+  
+  property  :part_id,  Integer
+  
+  belongs_to  :machine
+  
+end

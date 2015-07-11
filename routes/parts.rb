@@ -57,9 +57,21 @@ get '/machines/:id/order-part/?' do
   @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
   @part = Part.all
+  @order = Order.new
   erb :'/parts/order-part'
 end
 
+post '/machines/:id/order-part/?' do
+  auth_customer
+  @machine = Machine.get(params[:machine_id])
+  @part = Part.all
+  @order = Order.create(
+    :quantity => params[:quantity],
+    :part_id  => params[:partid]
+  )
+  
+  erb :'/parts/order-part'
+end
 
 
 

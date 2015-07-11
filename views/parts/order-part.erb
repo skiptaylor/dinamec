@@ -7,6 +7,7 @@
 		<h1 style="margin-bottom: .7em;"><%= @machine = Machine.get(params[:id]).name %> Parts <small></small></h1>
 		<div class="row">
 			<div class="col-md-12">
+				<form class="form-horizontal" method="post">
 				<table class="table table-striped table-condensed table-bordered table-hover">
 					<% @machine = Machine.get(params[:id]) %>
 					<tr style="font-size: .9em;">
@@ -21,7 +22,7 @@
 					<% @part.each do |part| %>
 					<% if part.machine_id == @machine.id %>
 					<tr style="font-size: .9em;">
-						<td> </td>
+						<td style="text-align: center;"><input style="width: 80px; text-align: center;" type="number" id="quantity" name="quantity" value="<%= @order.quantity %>" /></td>
 						<td><%= part.part %></td>
 						<td style="text-align: center;"><%= part.quantity %></td>
 						<td><%= part.part_number %></td>
@@ -31,7 +32,10 @@
 					<% end %>
 					<% end %>
 				</table>
+				<p class="center"><button type="submit" class="btn btn-success btn-md">Submit Order</button></p>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
+
