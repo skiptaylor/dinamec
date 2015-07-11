@@ -3,8 +3,8 @@
 		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 	</div>
 	<div class="container master-padding">
-		<p class="pull-right"><a class="btn btn-sm btn-primary" href="<%= request.referrer %>">Profile</a></p>
-		<h1 style="margin-bottom: .7em;"><%= @machine = Machine.get(params[:id]).name %> Parts <small></small></h1>
+		<p class="pull-right"><a class="btn btn-sm btn-primary" href="/profile">Profile</a></p>
+		<h1 style="margin-bottom: .7em;">Order Parts for <%= @machine = Machine.get(params[:id]).name %></h1>
 		<div class="row">
 			<div class="col-md-12">
 				<form class="form-horizontal" method="post">
