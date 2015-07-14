@@ -13,18 +13,17 @@
 					<tr style="font-size: .9em;">
 						<th style="text-align: center;">Order</th>
 						<th>Part</th>
-						<th style="text-align: center;">Qty</th>
+						<!-- <th style="text-align: center;">Qty</th> -->
 						<th>Part Number</th>
 						<th>Description</th>
 						<th style="text-align: center;"></th>
 					</tr>
-					<% @machine = Machine.get(params[:id]) %>
 					<% @part.each do |part| %>
 					<% if part.machine_id == @machine.id %>
 					<tr style="font-size: .9em;">
-						<td style="text-align: center;"><input style="width: 80px; text-align: center;" type="number" id="quantity" name="quantity" value="<%= @order.quantity %>" /></td>
+						<td style="text-align: center;"><input style="width: 80px; text-align: center;" type="number" id="quantity" name="quantity" value="" /></td>
 						<td><%= part.part %></td>
-						<td style="text-align: center;"><%= part.quantity %></td>
+						<!-- <td style="text-align: center;"><%= part.quantity %></td> -->
 						<td><%= part.part_number %></td>
 						<td><%= part.description %></td>
 						<td><small class="temp"><%= part.machine_id %></small></td>
@@ -32,10 +31,31 @@
 					<% end %>
 					<% end %>
 				</table>
-				<p class="center"><button type="submit" class="btn btn-success btn-md">Submit Order</button></p>
+				<div class="row">
+					<div class="col-sm-6">
+						<textarea type="text" class="form-control" id="comment" name="comment" rows="4" placeholder="Comments"><%= @order.comment %></textarea>
+					</div>
+				  <div class="form-group hidden">
+					  <label for="machineid" class="col-sm-2 control-label">Machine</label>
+					  <div class="col-sm-4">
+						  <select type="text" id="machineid" name="machineid" class="form-control">
+							  <% @machine = Machine.get(params[:id]) %>
+							  <option value="<%= @machine.id %>" <%= 'selected' if @order.machine_id == @machine.id %>><%= @machine.name %></option>
+						  </select>
+					  </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="po_number" class="col-sm-2 control-label">PO Number</label>
+				    <div class="col-sm-3">
+				      <input type="text" class="form-control" id="po_number" name="po_number" placeholder="PO Number" value="<%= @order.po_number %>">
+				    </div>
+				  
+					<div class="col-sm-2 pull-right" style="padding-top: 28px;">
+						<button type="submit" class="btn btn-success btn-md">Submit Order</button>
+					</div>
+				</div></div>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
-

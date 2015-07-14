@@ -36,6 +36,7 @@ get '/profile/?' do
   @company = Company.all
   @user = User.get(session[:customer])
   @machine = Machine.all
+  @order = Order.all
   erb :'/company/company'
 end
 

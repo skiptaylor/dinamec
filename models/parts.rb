@@ -23,10 +23,28 @@ class Order
 	property   :deleted_at, ParanoidDateTime
 	timestamps :at
   
-  property  :quantity,  Integer, required: false
+  property  :po_number,  String,   default: ""
+  property  :comment,    String,   default: ""
   
-  property  :part_id,  Integer
+  property  :machine_id,  Integer,  required: false
   
   belongs_to  :machine
+  has n,      :items,   :constraint => :destroy
+  
+end
+
+class Item
+  include DataMapper::Resource
+  
+	property   :id,         Serial
+	property   :deleted_at, ParanoidDateTime
+	timestamps :at
+  
+  property  :item,      String,   default: ""
+  property  :quantity,  Integer,  required: false
+  
+  property  :order_id,  Integer,  required: false
+  
+  belongs_to  :order
   
 end

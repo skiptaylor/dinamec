@@ -47,10 +47,9 @@ post '/machines/:machine_id/parts/:id/edit-part/?' do
     :description    => params[:description],
     :machine_id     => params[:machineid]
   )
+   
   redirect "/machines/#{params[:machine_id]}/parts"
 end
-
-
 
 get '/machines/:id/order-part/?' do
   auth_customer
@@ -63,17 +62,16 @@ end
 
 post '/machines/:id/order-part/?' do
   auth_customer
-  @machine = Machine.get(params[:machine_id])
-  @part = Part.all
-  @order = Order.create(
-    :quantity => params[:quantity],
-    :part_id  => params[:partid]
+  company = Company.get(params[:company_id])
+  machine = Machine.get(params[:machine_id])
+  order = Order.create(
+    :po_number    => params[:po_number],
+    :comment      => params[:comment],
+    :machine_id   => params[:machineid]
   )
   
-  erb :'/parts/order-part'
+  erb :"/index"
 end
-
-
 
 get '/machines/:machine_id/parts/:id/delete-part/?' do
   auth_admin
