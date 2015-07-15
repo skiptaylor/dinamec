@@ -30,7 +30,7 @@ class Order
   
   belongs_to  :machine
   has n,      :items,   :constraint => :destroy
-  
+    
 end
 
 class Item

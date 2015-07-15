@@ -53,6 +53,7 @@ end
 
 get '/machines/:id/order-part/?' do
   auth_customer
+  @user = User.get(session[:customer])
   @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
   @part = Part.all
@@ -62,6 +63,7 @@ end
 
 post '/machines/:id/order-part/?' do
   auth_customer
+  user = User.get(session[:customer])
   company = Company.get(params[:company_id])
   machine = Machine.get(params[:machine_id])
   order = Order.create(
@@ -70,7 +72,7 @@ post '/machines/:id/order-part/?' do
     :machine_id   => params[:machineid]
   )
   
-  erb :"/index"
+  erb :"/company/company"
 end
 
 get '/machines/:machine_id/parts/:id/delete-part/?' do
