@@ -40,7 +40,9 @@
 				<tr>
 					<% @order = Order.all(:created_at.gte => Chronic.parse('one week ago'), :created_at.lte => Chronic.parse('now'))%>
 					<th style="text-align: right; width: 15%;"> <span class="badge"><%= @order.count %></span></th>
-					<td colspan="2">Recent orders <small>(within one week ago)</td>
+					<td>Recent orders</td>
+					<td style="text-align: right;"><a href="/parts/orders" class="btn btn-default btn-xs">Orders</a></td>
+					
 				</tr>
 			</table>
 			</div>

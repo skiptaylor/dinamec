@@ -50,13 +50,13 @@
 					<% @machine.each do |machine| %>
 						<% if machine.company_id == company.id %>
 							<% @order = Order.all %>
-							<% @order.sort{|a,b| b.updated_at <=> a.updated_at}.each do |order| %>
+							<% @order.sort{|a,b| b.id <=> a.id}.each do |order| %>
 								<% if order.machine_id == machine.id %>
 								<tr>
 									<td style="text-align: center;"><%= order.id %></td>
 									<td><%= order.po_number %></td>
 									<td><%= order.created_at.strftime("%a %d %B %Y") %></td>
-									<td style="text-align: center;"><span class="under-link"><a href=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
+									<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= order.machine_id %>/<%= order.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
 								</tr>
 								<% end %>
 							<% end %>

@@ -83,3 +83,20 @@ get '/machines/:machine_id/parts/:id/delete-part/?' do
   part.destroy
   redirect "/machines/#{params[:machine_id]}/parts"
 end
+
+get '/parts/orders/?' do
+  auth_admin
+  @order = Order.all
+  erb :'/parts/orders'
+end
+
+get '/machines/:machine_id/:id/?' do
+  auth_customer
+  @user = User.get(session[:customer])
+  @company = Company.get(params[:company_id])
+  @machine = Machine.get(params[:machine_id])
+  @order = Order.get(params[:id])
+  @part = Part.all
+  
+  erb :'/parts/order'
+end

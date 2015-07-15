@@ -1,0 +1,32 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<p class="pull-right"><a class="btn btn-sm btn-default" href="/dashboard">Dashboard</a></p>
+		<h1 style="margin-bottom: .7em;">All Orders <small></small></h1>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-striped table-condensed table-bordered table-hover">
+					<table class="table table-striped table-condensed">
+						<tr>
+							<th style="text-align: center;">Order</th>
+							<th>PO</th>
+							<th>Order Date</th>
+							<th style="text-align: center;">View</th>
+						</tr>
+						<% @order = Order.all %>
+						<% @order.sort{|a,b| b.updated_at <=> a.updated_at}.each do |order| %>
+						<tr>
+							<td style="text-align: center;"><%= order.id %></td>
+							<td><%= order.po_number %></td>
+							<td><%= order.created_at.strftime("%d %B %Y - %A") %></td>
+							<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= order.machine_id %>/<%= order.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
+						</tr>
+						<% end %>
+					</table>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

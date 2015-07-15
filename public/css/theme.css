@@ -212,6 +212,10 @@ p	{
 	text-align: center;
 }
 
+.right	{
+	text-align: right;
+}
+
 .red	{
 	color: #de2c00;
 }
