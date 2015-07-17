@@ -12,6 +12,10 @@ end
 
 post '/new-user/?' do
   auth_admin
+	params[:username].strip!
+	params[:username].downcase!
+	params[:password].strip!
+	params[:password].downcase!
   user = User.create(
     :company_id   => params[:companyid],
     :first_name   => params[:first_name], 
@@ -43,6 +47,11 @@ end
 
 post '/:id/edit-user/?' do
   auth_admin
+  user = User.get(params[:id])
+	params[:username].strip!
+	params[:username].downcase!
+	params[:password].strip!
+	params[:password].downcase!
   user = User.get(params[:id])
   user.update(
     :company_id   => params[:companyid],
