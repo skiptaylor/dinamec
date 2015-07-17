@@ -4,7 +4,7 @@
 	</div>
 	
 	<div class="container master-padding">
-		<% if session[:customer] && @user.active %>
+		<% if @user.active %>
 		<% if session[:admin] %>
 		<p class="pull-right"><a class="btn btn-sm btn-default" href="/parts/orders">Orders</a></p>
 		<% end %>

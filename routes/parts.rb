@@ -58,6 +58,7 @@ get '/machines/:id/order-part/?' do
   @machine = Machine.get(params[:machine_id])
   @part = Part.all
   @order = Order.new
+  
   erb :'/parts/order-part'
 end
 
@@ -87,6 +88,7 @@ end
 get '/parts/orders/?' do
   auth_admin
   @order = Order.all
+
   erb :'/parts/orders'
 end
 

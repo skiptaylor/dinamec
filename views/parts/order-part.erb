@@ -3,7 +3,9 @@
 		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 	</div>
 	<div class="container master-padding">
+		<% if @user.active %>
 		<p class="pull-right"><a class="btn btn-sm btn-primary" href="/profile">Profile</a></p>
+		
 		<h1 style="margin-bottom: .7em;">Order Parts for <%= @machine = Machine.get(params[:id]).name %></h1>
 		<div class="row">
 			<div class="col-md-12">
@@ -18,15 +20,15 @@
 						<th>Description</th>
 						<th style="text-align: center;"></th>
 					</tr>
-					<% @part.each do |part| %>
-					<% if part.machine_id == @machine.id %>
+					<% @item.each do |item| %>
+					<% if item.order_id == @order.id %>
 					<tr style="font-size: .9em;">
 						<td style="text-align: center;"><input style="width: 80px; text-align: center;" type="number" id="quantity" name="quantity" value="" /></td>
-						<td><%= part.part %></td>
-						<!-- <td style="text-align: center;"><%= part.quantity %></td> -->
-						<td><%= part.part_number %></td>
-						<td><%= part.description %></td>
-						<td><small class="temp"><%= part.machine_id %></small></td>
+						<td><%= item.part %></td>
+						<!-- <td style="text-align: center;"><%= item.quantity %></td> -->
+						<td><%= item.part_number %></td>
+						<td><%= item.description %></td>
+						<td><small class="temp"><%= item.machine_id %></small></td>
 					</tr>
 					<% end %>
 					<% end %>
@@ -47,7 +49,7 @@
 				  <div class="form-group">
 					  <label for="po_number" class="col-sm-2 control-label">PO Number</label>
 					  <div class="col-sm-2">
-						  <input type="text" class="form-control" id="po_number" name="po_number" placeholder="PO Number" value="<%= @order.po_number %>">
+						  <input type="text" class="form-control" id="po_number" name="po_number" placeholder="Optional" value="<%= @order.po_number %>">
 						  <br />
 						  <button type="submit" class="btn btn-success btn-md pull-right">Submit Order</button>
 					  </div>
@@ -55,6 +57,13 @@
 				</div>
 				</form>
 			</div>
+			<% else %>
+			<div class="col-md-6">
+				<h6>You must be an active client to view this page.</h6>
+				<p>Please contact your CSR with any questions.</p>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
