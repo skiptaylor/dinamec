@@ -28,7 +28,7 @@ post '/signin/?' do
               redirect '/profile'
             end
           else
-            flash[:alert] = 'This account is inactive. contact your CSR.'
+            flash[:alert] = 'This account is inactive. Contact your CSR.'
             erb :"signin"
           end
         else
