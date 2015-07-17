@@ -7,7 +7,7 @@
 		<h1>Profile</h1>
 		<hr />
 		<div class="row">
-			<% if session[:customer] %>
+			<% if session[:customer] && @user.active %>
 			<div class="col-md-6">
 				<h6><%= @user = User.get(session[:customer]).first_name %> <%= @user = User.get(session[:customer]).last_name %></h6>
 				<% @company = Company.all %>
@@ -65,6 +65,12 @@
 				</table>
 			<% end %>
 			<% end %>
+			<% else %>
+				<div class="col-md-6">
+					<h6>You must be an active client to view this page.</h6>
+					<p>Please contact your CSR with any questions.</p>
+					<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				</div>
 			<% end %>
 		</div>
 	</div>

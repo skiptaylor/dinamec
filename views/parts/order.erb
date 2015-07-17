@@ -2,7 +2,9 @@
 	<div class="container">
 		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 	</div>
+	
 	<div class="container master-padding">
+		<% if session[:customer] && @user.active %>
 		<% if session[:admin] %>
 		<p class="pull-right"><a class="btn btn-sm btn-default" href="/parts/orders">Orders</a></p>
 		<% end %>
@@ -60,6 +62,13 @@
 				  </div>
 				</div>
 			</div>
+			<% else %>
+			<div class="col-md-6">
+				<h6>You must be an active client to view this page.</h6>
+				<p>Please contact your CSR with any questions.</p>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
