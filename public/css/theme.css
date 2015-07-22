@@ -220,6 +220,26 @@ p	{
 	color: #de2c00;
 }
 
+.gray	{
+	color: #95989c;
+}
+
+.red-ground	{
+	background-color: #ff2c2c;
+}
+
+.orange-ground	{
+	background-color: #ff8000;
+}
+
+.blue-ground	{
+	background-color: #379be1;
+}
+
+.green-ground	{
+	background-color: #3aa839;
+}
+
 .line-up	{
 	line-height: .55em;
 }

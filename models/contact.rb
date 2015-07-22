@@ -9,8 +9,8 @@ class Contact
   property :company,      String, default: ""
   property :email,        String, default: ""
   property :phone,        String, default: ""
-  property :comment,      Text,   default: ""
-  property :description,  Text,   default: ""
+  property :comment,      Text
+  property :description,  Text
   
   property :archive,      Boolean, default: true
   

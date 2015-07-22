@@ -39,19 +39,17 @@
 				</tr>
 				<tr>
 					<% @order = Order.all(:status => 'Requested') %>
-					
-					<th style="text-align: right; width: 15%;"> <span class="badge"><%= @order.count %></span></th>
-					
+					<th style="text-align: right; width: 15%;"> <span class="badge orange-ground"><%= @order.count %></span></th>
 					<td colspan="2">Quote Requests</td>
 				</tr>
 				<tr>
 					<% @order = Order.all(:status => 'Quoted') %>
-					<th style="text-align: right; width: 15%;"> <span class="badge"><%= @order.count %></span></th>
+					<th style="text-align: right; width: 15%;"> <span class="badge blue-ground"><%= @order.count %></span></th>
 					<td colspan="2">Quoted</td>
 				</tr>
 				<tr>
 					<% @order = Order.all(:status => 'Ordered') %>
-					<th style="text-align: right; width: 15%;"> <span class="badge"><%= @order.count %></span></th>
+					<th style="text-align: right; width: 15%;"> <span class="badge green-ground"><%= @order.count %></span></th>
 					<td colspan="2">Ordered</td>
 				</tr>
 			</table>
@@ -71,7 +69,7 @@
 					<td class="archive-link"  data-status="<%= contact.archive %>"><%= contact.name %></td>
 					<td class="archive-link"  data-status="<%= contact.archive %>"><%= contact.company %></td>
 					<td class="archive-link center"  data-status="<%= contact.archive %>"><% if contact.description == "" %><span class="label label-info">Comment</span><% else %><span class="label label-danger">Test Cleaning</span><% end %></td>
-					<td style="text-align: right;" class="archive-link"  data-status="<%= contact.archive %>"><a href="/contacts/<%= contact.id %>/delete" class="delete"><span style="color: #f66316;"><i class="icon-trash"></i></span></a></td>
+					<td style="text-align: right;" class="archive-link"  data-status="<%= contact.archive %>"><a href="/contacts/<%= contact.id %>/edit_contact"><span style="color: #195fae;"><i class="icon-edit"></i></span></a> &nbsp; <a href="/contacts/<%= contact.id %>/delete" class="delete"><span style="color: #f66316;"><i class="icon-trash"></i></span></a></td>
 				</tr>
 				<% end %>
 				</table>
