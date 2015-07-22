@@ -10,14 +10,17 @@
 				<table class="table table-striped table-condensed table-hover table-bordered">
 					<tr>
 						<th>Name</th>
+						<th>Quote Requests</th>
 						<th style="text-align: center;">View</th>
 						<td align="center"><a href="/machines/new-machine"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
 					
 						<% @company = Company.get(params[:comapny_id]) %>
+						
 						<% @machine.each do |machine| %>
 						<tr>
-						<td><%= machine.name %> <small class="temp"><%= machine.id %></small></td>
+						<td><%= machine.name %></td>
+						<td>&nbsp;&nbsp;<span class="badge orange-ground">&nbsp;<%= machine.orders(:status => "Requested").count %>&nbsp;</span> &nbsp; <small>Requests</small></td>
 						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/machine"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
 						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/edit-machine"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
 						
