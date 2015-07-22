@@ -1,0 +1,59 @@
+<div class="white-ground">
+	<div class="container">
+		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+	</div>
+	<div class="container master-padding">
+		<p class="pull-right"><a class="btn btn-sm btn-primary" href="/profile">Profile</a></p>
+		<h1 style="margin-bottom: .7em;">Order Parts for <%= @machine = Machine.get(params[:machine_id]).name %></h1>
+		<div class="row">
+			<div class="col-md-12">
+				<form class="form-horizontal" method="post">
+				<table class="table table-striped table-condensed table-bordered table-hover" style="font-size: .9em;">
+					<% @machine = Machine.get(params[:machine_id]) %>
+					<tr>
+						<th style="text-align: center;">Order</th>
+						<th>Part</th>
+						<th style="text-align: center;">Suggested Qty</th>
+						<th>Part Number</th>
+						<th>Description</th>
+						<th> </th>
+					</tr>
+					<% @machine = Machine.get(params[:machine_id]) %>
+					<% @part.each do |part| %>
+					<% if part.machine_id == @machine.id %>
+					<tr>
+						<td style="text-align: center;"><input style="width: 70px; text-align: center;" type="number" id="quantity" name="quantity" value="" /></td>
+						<td><%= part.part %></td>
+						<td style="text-align: center;"><%= part.suggested_qty %></td>
+						<td><%= part.part_number %></td>
+						<td><%= part.description %></td>
+						<td><small class="temp pull-right"><%= part.machine_id %></small></td>
+					</tr>
+					<% end %>
+					<% end %>
+				</table>
+				<div class="row">
+					<div class="col-sm-9">
+						<textarea type="text" class="form-control" id="comment" name="comment" rows="4" placeholder="Comments"><%= @order.comment %></textarea>
+					</div>
+				  <div class="form-group hidden">
+					  <label for="machineid" class="col-sm-2 control-label">Machine</label>
+					  <div class="col-sm-2">
+						  <select type="text" id="machineid" name="machineid" class="form-control">
+							  <% @machine = Machine.get(params[:machine_id]) %>
+							  <option value="<%= @machine.id %>" <%= 'selected' if @order.machine_id == @machine.id %>><%= @machine.name %></option>
+						  </select>
+					  </div>
+				  </div>
+				  <div class="form-group">
+					  <div class="col-sm-3">
+						  <br /><br />
+						  <button type="submit" class="btn btn-success btn-md pull-right" style="margin-right: 3em;">Submit Order</button>
+					  </div>
+				  </div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

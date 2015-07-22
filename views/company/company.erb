@@ -7,7 +7,6 @@
 		<h1>Profile</h1>
 		<hr />
 		<div class="row">
-			<% if @user.active %>
 			<div class="col-md-6">
 				<h6><%= @user = User.get(session[:customer]).first_name %> <%= @user = User.get(session[:customer]).last_name %></h6>
 				<% @company = Company.all %>
@@ -32,7 +31,7 @@
 								<% if machine.company_id == company.id %>
 								<tr>	
 									<td><%= machine.name %></td>
-									<td style="text-align: right;"><a href="/machines/<%= machine.id %>/order-part" class="btn btn-xs btn-primary">Order Parts</a></td>
+									<td style="text-align: right;"><a href="/machines/<%= machine.id %>/orders/order-part" class="btn btn-xs btn-primary">Order Parts</a></td>
 								</tr>
 								<% end %>
 							<% end %>
@@ -56,7 +55,7 @@
 									<td style="text-align: center;"><%= order.id %></td>
 									<td><%= order.po_number %></td>
 									<td><%= order.created_at.strftime("%a %d %B %Y") %></td>
-									<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= order.machine_id %>/<%= order.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
+									<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= order.machine_id %>/orders/<%= order.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
 								</tr>
 								<% end %>
 							<% end %>
@@ -65,13 +64,7 @@
 				</table>
 			<% end %>
 			<% end %>
-			<% else %>
-				<div class="col-md-6">
-					<h6>You must be an active client to view this page.</h6>
-					<p>Please contact your CSR with any questions.</p>
-					<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-				</div>
-			<% end %>
+			
 		</div>
 	</div>
 </div>

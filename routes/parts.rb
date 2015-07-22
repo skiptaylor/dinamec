@@ -1,4 +1,4 @@
-get '/machines/:id/parts/?' do
+get '/machines/:machine_id/parts/?' do
   auth_admin
   @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
@@ -6,7 +6,7 @@ get '/machines/:id/parts/?' do
   erb :'/parts/parts'
 end
 
-get '/machines/:id/new-part/?' do
+get '/machines/:machine_id/parts/new-part/?' do
   auth_admin
   @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
@@ -14,17 +14,18 @@ get '/machines/:id/new-part/?' do
   erb :'/parts/edit-part'
 end
 
-post '/machines/:id/new-part/?' do
+post '/machines/:machine_id/parts/new-part/?' do
   auth_admin
   company = Company.get(params[:company_id])
   machine = Machine.get(params[:machine_id])
   part = Part.create(
     :part           => params[:part],
-    :quantity       => params[:quantity],
+    :suggested_qty  => params[:suggested_qty],
     :part_number    => params[:part_number],
     :description    => params[:description],
     :machine_id     => params[:machineid]
   )
+  
   redirect "/machines/#{params[:id]}/parts"
 end
 
@@ -42,7 +43,7 @@ post '/machines/:machine_id/parts/:id/edit-part/?' do
   part = Part.get(params[:id])
   part.update(
     :part           => params[:part],
-    :quantity       => params[:quantity],
+    :suggested_qty  => params[:suggested_qty],
     :part_number    => params[:part_number],
     :description    => params[:description],
     :machine_id     => params[:machineid]
@@ -51,48 +52,7 @@ post '/machines/:machine_id/parts/:id/edit-part/?' do
   redirect "/machines/#{params[:machine_id]}/parts"
 end
 
-get '/machines/:id/order-part/?' do
-  auth_customer
-  @user = User.get(session[:customer])
-  @company = Company.get(params[:company_id])
-  @machine = Machine.get(params[:machine_id])
-  @part = Part.all
-  @order = Order.new
-  
-  erb :'/parts/order-part'
-end
-
-post '/machines/:id/order-part/?' do
-  auth_customer
-  user = User.get(session[:customer])
-  company = Company.get(params[:company_id])
-  machine = Machine.get(params[:machine_id])
-  order = Order.create(
-    :po_number    => params[:po_number],
-    :comment      => params[:comment],
-    :machine_id   => params[:machineid]
-  )
-  
-  erb :"/company/company"
-end
-
-get '/machines/:machine_id/parts/:id/delete-part/?' do
-  auth_admin
-  company = Company.get(params[:company_id])
-  machine = Machine.get(params[:machine_id])
-  part = Part.get(params[:id])
-  part.destroy
-  redirect "/machines/#{params[:machine_id]}/parts"
-end
-
-get '/parts/orders/?' do
-  auth_admin
-  @order = Order.all
-
-  erb :'/parts/orders'
-end
-
-get '/machines/:machine_id/:id/?' do
+get '/machines/:machine_id/parts/:id/delete/?' do
   auth_customer
   @user = User.get(session[:customer])
   @company = Company.get(params[:company_id])

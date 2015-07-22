@@ -13,6 +13,7 @@
 							<th style="text-align: center;">Order</th>
 							<th>PO</th>
 							<th>Order Date</th>
+							<th>Status</th>
 							<th style="text-align: center;">View</th>
 						</tr>
 						<% @order = Order.all %>
@@ -21,7 +22,19 @@
 							<td style="text-align: center;"><%= order.id %></td>
 							<td><%= order.po_number %></td>
 							<td><%= order.created_at.strftime("%d %B %Y - %A") %></td>
-							<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= order.machine_id %>/<%= order.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
+							<td><%= order.status %></td>
+							
+					 	  <div class="col-sm-4">
+					 		  <select type="text" id="machineid" name="machineid" class="form-control">
+					 			  <% @machine = Machine.get(params[:machine_id]) %>
+					 			  <option value="<%= @machine.id %>" <%= 'selected' if order.machine_id == @machine.id %>><%= @machine.name %></option>
+					 		  </select>
+					 	  </div>
+							
+							<td style="text-align: center;"><span class="under-link"><a href="/orders/<%= order.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
+							
+							
+							
 						</tr>
 						<% end %>
 					</table>
