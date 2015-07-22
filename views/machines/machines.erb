@@ -14,14 +14,12 @@
 						<th style="text-align: center;">View</th>
 						<td align="center"><a href="/machines/new-machine"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
-					
 						<% @company = Company.get(params[:comapny_id]) %>
-						
 						<% @machine.each do |machine| %>
 						<tr>
 						<td><%= machine.name %></td>
-						<td>&nbsp;&nbsp;<span class="badge orange-ground">&nbsp;<%= machine.orders(:status => "Requested").count %>&nbsp;</span> &nbsp; <small>Requests</small></td>
-						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/machine"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></span></td>
+						<td>&nbsp;&nbsp;<span class="badge orange-ground">&nbsp;<%= machine.orders(:status => "Requested").count %>&nbsp;</span> &nbsp; <small>Requests</small> &nbsp; <a href="/machines/<%= machine.id %>/orders" class="btn btn-xs btn-default">Orders</a></td>
+						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/machine"><span class="glyphicon glyphicon-eye-open green" aria-hidden="true"></span></a></span></td>
 						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/edit-machine"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
 						
 						<% end %>

@@ -14,14 +14,14 @@
 	<div class="container master-padding">
 		<% if session[:admin] %>
 		<p class="pull-right">
-			<a class="btn btn-sm btn-default" href="/machines/<%= @order.machine_id %>/<%= @order.id %>/edit-order">Edit Order</a> &nbsp; &nbsp; 
+			<a class="btn btn-sm btn-default" href="/machines/<%= @order.machine_id %>/orders/<%= @order.id %>/edit-order">Edit Order</a> &nbsp; &nbsp; 
 			<a class="btn btn-sm btn-default" href="/parts/orders">Orders</a>
 		</p>
 		<% end %>
 		<% if session[:customer] %>
 		<p class="pull-right"><a class="btn btn-sm btn-primary" href="/profile">Profile</a></p>
 		<% end %>
-		<h1 style="margin-bottom: .7em;">Parts Order for <%= @machine = Machine.get(params[:machine_id]).name %></h1>
+		<h1 style="margin-bottom: .7em;">Quote Request for <%= @machine = Machine.get(params[:machine_id]).name %></h1>
 		<div class="row">
 			<div class="col-md-12 form-horizontal">
 				<div class="form-group ">
@@ -52,18 +52,16 @@
 						<th>Description</th>
 						<th style="text-align: center;"></th>
 					</tr>
-					<% @part.each do |part| %>
-					<% if part.machine_id == @machine.id %>
+
 					<tr style="font-size: .9em;">
 						<td style="text-align: center;"></td>
-						<td><%= part.part %></td>
-						<!-- <td style="text-align: center;"><%= part.suggested_qty %></td> -->
-						<td><%= part.part_number %></td>
-						<td><%= part.description %></td>
-						<td><small class="temp"><%= part.machine_id %></small></td>
+						<td></td>
+						<td style="text-align: center;"></td>
+						<td></td>
+						<td></td>
 					</tr>
-					<% end %>
-					<% end %>
+				
+					
 				</table>
 
 						

@@ -17,7 +17,7 @@ post '/machines/:machine_id/orders/order-part/?' do
   order = Order.create(
     :po_number    => params[:po_number],
     :comment      => params[:comment],
-    :machine_id   => params[:machineid],
+    :machine_id   => params[:machine_id],
     :status       => params[:status]
   )
   
@@ -41,7 +41,7 @@ get '/orders/orders/?' do
   erb :'/orders/orders'
 end
 
-get '/orders/:id/?' do
+get '/machines/:machine_id/orders/:id/?' do
   auth_admin
   @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
@@ -66,7 +66,7 @@ post '/machines/:machine_id/orders/:id/edit-order/?' do
   order.update(
     :po_number    => params[:po_number],
     :comment      => params[:comment],
-    :machine_id   => params[:machineid],
+    :machine_id   => params[:machine_id],
     :status       => params[:status]
   )
   redirect "/machines/#{params[:machine_id]}/orders/#{params[:order_id]}"
@@ -80,4 +80,13 @@ get '/machines/:machine_id/orders/:id/?' do
   @order = Order.get(params[:id])
   @part = Part.all
   erb :'orders/order'
+end
+
+get '/machines/:machine_id/orders/?' do
+  auth_customer
+  @user = User.get(session[:customer])
+  @company = Company.get(params[:company_id])
+  @machine = Machine.get(params[:machine_id])
+  @order = Order.all
+  erb :'orders/orders'
 end
