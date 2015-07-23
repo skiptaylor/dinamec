@@ -21,7 +21,7 @@
 						</tr>
 						<% @machine = Machine.get(params[:machine_id]) %>
 						<% @order = Order.all %>
-						<% @order.sort{|a,b| b.updated_at <=> a.updated_at}.each do |order| %>
+						<% @order.sort{|a,b| b.id <=> a.id}.each do |order| %>
 						<% if order.machine_id == @machine.id%>
 						<tr>
 							<td><%= order.machine_id %></td>
