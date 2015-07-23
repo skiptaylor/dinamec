@@ -15,7 +15,7 @@
 		<% if session[:admin] %>
 		<p class="pull-right">
 			<a class="btn btn-sm btn-default" href="/machines/<%= @order.machine_id %>/orders/<%= @order.id %>/edit-order">Edit Order</a> &nbsp; &nbsp; 
-			<a class="btn btn-sm btn-default" href="/parts/orders">Orders</a>
+			<a class="btn btn-sm btn-default" href="/machines/<%= @order.machine_id %>/orders">Orders</a>
 		</p>
 		<% end %>
 		<% if session[:customer] %>
