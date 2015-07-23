@@ -10,15 +10,17 @@
 				<table class="table table-striped table-condensed table-hover table-bordered">
 					<tr>
 						<th>Name</th>
+						<th>Client</th>
 						<th>Quote Requests</th>
 						<th style="text-align: center;">View</th>
 						<td align="center"><a href="/machines/new-machine"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
-						<% @company = Company.get(params[:comapny_id]) %>
+						<% @company = Company.all %>
 						<% @machine.each do |machine| %>
 						<tr>
 						<td><%= machine.name %></td>
-						<td>&nbsp;&nbsp;<span class="badge orange-ground">&nbsp;<%= machine.orders(:status => "Requested").count %>&nbsp;</span> &nbsp; <small>Requests</small> &nbsp; <a href="/machines/<%= machine.id %>/orders" class="btn btn-xs btn-default">Orders</a></td>
+						<td><% @company.each do |company| %><% if machine.company_id == company.id %><%= company.company %><% end %><% end %></td>
+						<td>&nbsp;&nbsp;<span class="badge orange-ground">&nbsp;<%= machine.orders(:status => "Requested").count %>&nbsp;</span>&nbsp; <small>Requested</small> &nbsp; &nbsp;<span class="badge green-ground">&nbsp;<%= machine.orders(:status => "Quoted").count %>&nbsp;</span>&nbsp; <small>Quoted</small> &nbsp; &nbsp;<span class="badge blue-ground">&nbsp;<%= machine.orders(:status => "Ordered").count %>&nbsp;</span>&nbsp; <small>Ordered</small> &nbsp; &nbsp;&nbsp;<a href="/machines/<%= machine.id %>/orders" class="btn btn-xs btn-default">Orders</a></td>
 						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/machine"><span class="glyphicon glyphicon-eye-open green" aria-hidden="true"></span></a></span></td>
 						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= machine.id %>/edit-machine"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span></td>
 						

@@ -41,14 +41,6 @@ get '/orders/orders/?' do
   erb :'/orders/orders'
 end
 
-get '/machines/:machine_id/orders/:id/?' do
-  auth_admin
-  @company = Company.get(params[:company_id])
-  @machine = Machine.get(params[:machine_id])
-  @order = Order.get(params[:id])
-  erb :'/orders/order'
-end
-
 get '/machines/:machine_id/orders/:id/edit-order/?' do
   auth_admin
   user = User.get(session[:customer])
