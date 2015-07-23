@@ -3,7 +3,7 @@
 		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 	</div>
 	<div class="container master-padding">
-		<p class="pull-right"><a class="btn btn-sm btn-primary" href="/profile">Profile</a></p>
+		<p class="pull-right"><a class="btn btn-sm btn-default" href="<%= request.referrer %>">Cancel</a></p>
 		
 		<h1 style="margin-bottom: .7em;">Edit Order <%= @order.id %> for <%= @machine = Machine.get(params[:machine_id]).name %></h1>
 		<div class="row">
