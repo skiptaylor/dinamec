@@ -63,7 +63,9 @@
 							  </select>
 						  </div>
 					  </div>
-					  <button type="submit" class="btn btn-success btn-md pull-right">Save</button>
+					  <p style="text-align: right">
+					   <button type="submit" class="btn btn-success btn-md">Save</button> &emsp; <a class="btn btn-md btn-warning delete" href="/machines/<%= @order.machine_id %>/orders/<%= @order.id %>/delete-order"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+						</p>
 				  </div>
 				</div>
 				</form>

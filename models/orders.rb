@@ -5,9 +5,9 @@ class Order
 	property   :deleted_at, ParanoidDateTime
 	timestamps :at
   
-  property  :po_number,   String,   default: ""
-  property  :comment,     String,   default: ""
-  property  :status,      String,   default: "Requested"
+  property  :po_number,   String,   default: ''
+  property  :comment,     String,   default: ''
+  property  :status,      String,   default: 'Requested'
   
   property  :machine_id,  Integer,  required: false
   
