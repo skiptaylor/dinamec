@@ -3,10 +3,9 @@
 		<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
 	</div>
 	<div class="container master-padding">
-		<% if @user.active %>
 		<p class="pull-right"><a class="btn btn-sm btn-primary" href="/profile">Profile</a></p>
 		
-		<h1 style="margin-bottom: .7em;">Order Parts for <%= @machine = Machine.get(params[:id]).name %></h1>
+		<h1 style="margin-bottom: .7em;">Edit Order <%= @order.id %> for <%= @machine = Machine.get(params[:machine_id]).name %></h1>
 		<div class="row">
 			<div class="col-md-12">
 				<form class="form-horizontal" method="post">
@@ -20,50 +19,56 @@
 						<th>Description</th>
 						<th style="text-align: center;"></th>
 					</tr>
-					<% @item.each do |item| %>
-					<% if item.order_id == @order.id %>
+					
+					
 					<tr style="font-size: .9em;">
 						<td style="text-align: center;"><input style="width: 80px; text-align: center;" type="number" id="quantity" name="quantity" value="" /></td>
-						<td><%= item.part %></td>
-						<!-- <td style="text-align: center;"><%= item.quantity %></td> -->
-						<td><%= item.part_number %></td>
-						<td><%= item.description %></td>
-						<td><small class="temp"><%= item.machine_id %></small></td>
+						<td></td>
+						<!-- <td style="text-align: center;"></td> -->
+						<td></td>
+						<td></td>
+						<td><small class="temp"></small></td>
 					</tr>
-					<% end %>
-					<% end %>
+					
+					
 				</table>
 				<div class="row">
 					<div class="col-sm-7">
 						<textarea type="text" class="form-control" id="comment" name="comment" rows="4" placeholder="Comments"><%= @order.comment %></textarea>
 					</div>
-				  <div class="form-group hidden">
-					  <label for="machineid" class="col-sm-2 control-label">Machine</label>
-					  <div class="col-sm-4">
-						  <select type="text" id="machineid" name="machineid" class="form-control">
-							  <% @machine = Machine.get(params[:id]) %>
-							  <option value="<%= @machine.id %>" <%= 'selected' if @order.machine_id == @machine.id %>><%= @machine.name %></option>
-						  </select>
+					<div class="col-sm-5">
+						<div class="form-group hidden">
+						  <label for="machineid" class="col-sm-4 control-label">Machine</label>
+						  <div class="col-sm-8">
+							  <select type="text" id="machineid" name="machineid" class="form-control">
+								  <% @machine = Machine.get(params[:machine_id]) %>
+								  <option value="<%= @machine.id %>" <%= 'selected' if @order.machine_id == @machine.id %>><%= @machine.name %></option>
+							  </select>
+						  </div>
 					  </div>
-				  </div>
-				  <div class="form-group">
-					  <label for="po_number" class="col-sm-2 control-label">PO Number</label>
-					  <div class="col-sm-2">
-						  <input type="text" class="form-control" id="po_number" name="po_number" placeholder="Optional" value="<%= @order.po_number %>">
-						  <br />
-						  <button type="submit" class="btn btn-success btn-md pull-right">Submit Order</button>
+					  <div class="form-group">
+						  <label for="po_number" class="col-sm-4 control-label">PO Number</label>
+						  <div class="col-sm-8">
+							  <input type="text" class="form-control" id="po_number" name="po_number" placeholder="Optional" value="<%= @order.po_number %>">
+						  </div>
 					  </div>
+					  <div class="form-group">
+						  <label for="status" class="col-sm-4 control-label">Status</label>
+						  <div class="col-sm-8">
+							  <select name="status" id="status" class="form-control">
+								  <option value="Requested" <%= 'selected' if @order.status == 'Requested' %>>Requested</option>
+								  <option value="Quoted" <%= 'selected' if @order.status == 'Quoted' %>>Quoted</option>
+								  <option value="Ordered" <%= 'selected' if @order.status == 'Ordered' %>>Ordered</option>
+								  <option value="Completed" <%= 'selected' if @order.status == 'Completed' %>>Completed</option>
+							  </select>
+						  </div>
+					  </div>
+					  <button type="submit" class="btn btn-success btn-md pull-right">Save</button>
 				  </div>
 				</div>
 				</form>
 			</div>
-			<% else %>
-			<div class="col-md-6">
-				<h6>You must be an active client to view this page.</h6>
-				<p>Please contact your CSR with any questions.</p>
-				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-			</div>
-			<% end %>
 		</div>
 	</div>
 </div>
+
