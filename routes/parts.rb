@@ -17,7 +17,7 @@ end
 post '/machines/:machine_id/parts/new-part/?' do
   auth_admin
   company = Company.get(params[:company_id])
-  machine = Machine.get(params[:id])
+  machine = Machine.get(params[:machine_id])
   part = Part.create(
     :part           => params[:part],
     :suggested_qty  => params[:suggested_qty],
@@ -26,7 +26,7 @@ post '/machines/:machine_id/parts/new-part/?' do
     :machine_id     => params[:machineid]
   )
   
-  redirect "/machines/#{params[:id]}/parts"
+  redirect "/machines/#{params[:machine_id]}/parts"
 end
 
 get '/machines/:machine_id/parts/:id/edit-part/?' do
@@ -57,8 +57,8 @@ get '/machines/:machine_id/parts/:id/delete/?' do
   @user = User.get(session[:customer])
   @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
-  @order = Order.get(params[:id])
-  @part = Part.all
+  part = Part.get(params[:id])
+  part.destroy
   
-  erb :'/parts/order'
+  redirect "/machines/#{params[:machine_id]}/parts"
 end

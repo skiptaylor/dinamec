@@ -15,7 +15,7 @@
 						<th style="text-align: center;">Suggested Qty</th>
 						<th>Part Number</th>
 						<th>Description</th>
-						<td style="text-align: center;"><a href="/machines/<%= @machine.id %>/new-part"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
+						<td style="text-align: center;"><a href="/machines/<%= @machine.id %>/parts/new-part"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
 					</tr>
 					<% @machine = Machine.get(params[:machine_id]) %>
 					<% @part.each do |part| %>
@@ -26,7 +26,7 @@
 						<td style="text-align: center;"><%= part.suggested_qty %></td>
 						<td><%= part.part_number %></td>
 						<td><%= part.description %></td>
-						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= @machine.id %>/parts/<%= part.id %>/edit-part"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span> &nbsp; &nbsp; <span class="under-link"><a href="/machines/<%= @machine.id %>/parts/<%= part.id %>/delete-part" class="delete"><span class="glyphicon glyphicon-trash orange" aria-hidden="true"></span></a></span></td>
+						<td style="text-align: center;"><span class="under-link"><a href="/machines/<%= @machine.id %>/parts/<%= part.id %>/edit-part"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></span> &nbsp; &nbsp; <span class="under-link"><a href="/machines/<%= @machine.id %>/parts/<%= part.id %>/delete" class="delete"><span class="glyphicon glyphicon-trash orange" aria-hidden="true"></span></a></span></td>
 					</tr>
 					<% end %>
 					<% end %>
