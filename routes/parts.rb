@@ -17,7 +17,7 @@ end
 post '/machines/:machine_id/parts/new-part/?' do
   auth_admin
   company = Company.get(params[:company_id])
-  machine = Machine.get(params[:machine_id])
+  machine = Machine.get(params[:id])
   part = Part.create(
     :part           => params[:part],
     :suggested_qty  => params[:suggested_qty],
