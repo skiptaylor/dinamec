@@ -53,10 +53,9 @@ post '/machines/:machine_id/parts/:id/edit-part/?' do
 end
 
 get '/machines/:machine_id/parts/:id/delete/?' do
-  auth_customer
-  @user = User.get(session[:customer])
-  @company = Company.get(params[:company_id])
-  @machine = Machine.get(params[:machine_id])
+  auth_admin
+  company = Company.get(params[:company_id])
+  machine = Machine.get(params[:machine_id])
   part = Part.get(params[:id])
   part.destroy
   

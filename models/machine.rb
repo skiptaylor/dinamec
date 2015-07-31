@@ -7,7 +7,6 @@ class Machine
   
   property  :name,        String, default: ""
   
-  property  :part_id,     Integer, required: false
   property  :company_id,  Integer, required: false
    
   belongs_to  :company

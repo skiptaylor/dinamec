@@ -19,6 +19,6 @@ class User
     
   property  :active,    Boolean, :default => true
   
-  has n,  :companies, required: false
+  belongs_to  :company
   
 end

@@ -14,12 +14,22 @@ post '/machines/:machine_id/orders/order-part/?' do
   user = User.get(session[:customer])
   company = Company.get(params[:company_id])
   machine = Machine.get(params[:machine_id])
+  part = Part.all
   order = Order.create(
     :po_number    => params[:po_number],
     :comment      => params[:comment],
     :machine_id   => params[:machine_id],
     :status       => params[:status]
   )
+  
+  puts params[:parts].inspect
+  params[:parts].each do |part_id, part_quantity|
+    Item.create(
+      order_id:   order.id,
+      part_id:    part_id,
+      quantity:   part_quantity
+    )
+  end
   
   erb :"/company/company"
 end
@@ -43,9 +53,11 @@ end
 
 get '/machines/:machine_id/orders/:id/edit-order/?' do
   auth_admin
-  user = User.get(session[:customer])
-  company = Company.get(params[:company_id])
+  @user = User.get(session[:customer])
+  @company = Company.get(params[:company_id])
   @machine = Machine.get(params[:machine_id])
+  @part = Part.all
+  @item = Item.all
   @order = Order.get(params[:id])
   
   erb :'orders/edit-order'
@@ -71,6 +83,7 @@ get '/machines/:machine_id/orders/:id/?' do
   @machine = Machine.get(params[:machine_id])
   @order = Order.get(params[:id])
   @part = Part.all
+  @item = Item.all
   erb :'orders/order'
 end
 
