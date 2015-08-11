@@ -1,10 +1,11 @@
 class Email
   
-  def self.quote_request comment
+  def self.quote_request comment, id
 
     body = ''
-    body << "<h4>Request from ?</h4>"
+    body << "<h4>Request from </h4>"
     body << "<p>Machine: </p>"
+    body << "<p>Order number: #{id}</p>"
     body << "<p>Comment: #{comment}</p>"
 
     Pony.mail(
