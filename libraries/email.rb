@@ -3,9 +3,9 @@ class Email
   def self.quote_request po_number, comment
 
     body = ''
-    body << "<h4>Request for Parts Quote</h4>"
-    body << "<p>School Name: #{po_number}</p>"
-    body << "<p>#{comment}</p>"
+    body << "<h4>Request from ?</h4>"
+    body << "<p>Machine: #{machine.name}</p>"
+    body << "<p>Comment: #{comment}</p>"
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
