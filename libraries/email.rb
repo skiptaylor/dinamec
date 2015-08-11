@@ -1,6 +1,6 @@
 class Email
   
-  def self.quote_request po_number, comment
+  def self.quote_request comment
 
     body = ''
     body << "<h4>Request from ?</h4>"
