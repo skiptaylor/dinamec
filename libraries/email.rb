@@ -4,7 +4,7 @@ class Email
 
     body = ''
     body << "<h4>Request from ?</h4>"
-    body << "<p>Machine: #{machine.name}</p>"
+    body << "<p>Machine: </p>"
     body << "<p>Comment: #{comment}</p>"
 
     Pony.mail(
