@@ -1,9 +1,9 @@
 class Email
   
-  def self.quote_request id, comment
+  def self.quote_request machine_id, id, comment
 
     body = ''
-    body << "<p>Machine: </p>"
+    body << "<p>Machine: #{machine_id}</p>"
     body << "<p>Order number: #{id}</p>"
     body << "<p>Comment: #{comment}</p>"
 
