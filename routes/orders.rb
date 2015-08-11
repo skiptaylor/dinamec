@@ -32,7 +32,7 @@ post '/machines/:machine_id/orders/order-part/?' do
   end
   
   
-  Email.quote_request(order.id, order.comment, order.machine_id)
+  Email.quote_request(order.machine_id, order.id, order.comment)
   
   erb :"/company/company"
 end
