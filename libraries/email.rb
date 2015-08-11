@@ -3,7 +3,7 @@ class Email
   def self.quote_request customer, id, comment
 
     body = ''
-    body << "<h4>Request from #{session[:customer]}</h4>"
+    body << "<h4>Request from #{params[:machine]}</h4>"
     body << "<p>Machine: </p>"
     body << "<p>Order number: #{id}</p>"
     body << "<p>Comment: #{comment}</p>"
