@@ -149,7 +149,7 @@
 						
 						<div class="col-md-6">
 							<h2>What's on your mind?</h2><br />
-							<form class="form-horizontal" method="post" action="contact">
+							<form class="form-horizontal" method="post" action="contact"  name="myForm" id="myForm">
 							  <div class="form-group">
 							    <label for="name" class="col-sm-2 control-label">Name</label>
 							    <div class="col-sm-10">
@@ -210,4 +210,20 @@
 	</div>
 	</div> <!-- /container -->
 </div>
+
+<script language="JavaScript" type="text/javascript"
+	xml:space="preserve">
+	var frmvalidator  = new Validator("myForm");
+	frmvalidator.addValidation("name","req","Please enter your Name");
+  
+	frmvalidator.addValidation("company","req","Please enter your Company");
+  
+	frmvalidator.addValidation("email","req","Please enter your Email");
+	frmvalidator.addValidation("email","email");
+  
+	frmvalidator.addValidation("phone","maxlen=50");
+  
+	frmvalidator.addValidation("comment","req","Please enter your Comment");
+
+//]]></script>
 
