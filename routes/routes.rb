@@ -55,8 +55,14 @@ post '/contact/?' do
     :comment      => params[:comment]
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
+    
+  if params["g-recaptcha-response"] == ""
+    flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
+    redirect '/contact'
+  else
+    redirect '/contacts/thank-you'
+  end
   
-  redirect '/contacts/thank-you'
 end
 
 get "/contacts/thank-you/?" do
@@ -78,7 +84,13 @@ post '/cleaning/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  redirect '/contacts/thank-you'
+  if params["g-recaptcha-response"] == ""
+    flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
+    redirect '/cleaning'
+  else
+    redirect '/contacts/thank-you'
+  end
+  
 end
 
 get "/signin/?" do

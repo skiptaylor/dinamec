@@ -9,7 +9,7 @@ class Email
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
-      to: 'tayloraid@gmail.com',
+      to: 'info@dinamecsystems.com',
       from: 'no-reply@dinamecsystems.com',
       subject: 'Request for Parts Quote',
       body: body

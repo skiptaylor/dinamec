@@ -68,14 +68,12 @@
 					<td class="archive-link"  data-status="<%= contact.archive %>"><small><%= contact.created_at.strftime("%A %d %B %Y") %></small></td>
 					<td class="archive-link"  data-status="<%= contact.archive %>"><%= contact.name %></td>
 					<td class="archive-link"  data-status="<%= contact.archive %>"><%= contact.company %></td>
-					<td class="archive-link center"  data-status="<%= contact.archive %>"><% if contact.comment != "" %><span class="label label-info">Comment</span><% elsif contact.description != "" %><span class="label label-danger">Test Cleaning</span><% else %><span class="label label-default">Empty</span><% end %></td>
+					<td class="archive-link center"  data-status="<%= contact.archive %>"><% if contact.comment %><span class="label label-info">Comment</span><% elsif contact.description %><span class="label label-danger">Test Cleaning</span><% else %><span class="label label-default">Empty</span><% end %></td>
 					<td style="text-align: right;" class="archive-link"  data-status="<%= contact.archive %>"><a href="/contacts/<%= contact.id %>/edit_contact"><span style="color: #195fae;"><i class="icon-edit"></i></span></a> &nbsp; <a href="/contacts/<%= contact.id %>/delete" class="delete"><span style="color: #f66316;"><i class="icon-trash"></i></span></a></td>
 				</tr>
 				<% end %>
 				</table>
 			</div>	
-				
-				
 				
 		</div>
 	</div>

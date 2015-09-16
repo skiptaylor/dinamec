@@ -17,3 +17,4 @@ gem 'dm-postgres-adapter', '~> 1.2.0', group: :production
 
 gem 'pony', '~> 1.4'
   
+gem 'httparty', '~> 0.13.5', require: 'httparty'

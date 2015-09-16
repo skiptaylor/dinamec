@@ -9,7 +9,7 @@
 					<h2>You can get a demonstration of the Dinamec Systems Fluid Clean process</h2>
 					<p>Let us prove our cleaning efficiency by performing a trial cleaning at one of our testing facilities. Complete and submit the form below and a Dinamec Systems representative will be in touch.</p>
 					<br />
-					<form class="form-horizontal" method="post" action="cleaning">
+					<form class="form-horizontal" method="post" action="cleaning" name="cleaning" id="cleaning">
 					  <div class="form-group">
 					    <label for="name" class="col-sm-3 control-label">Name</label>
 					    <div class="col-sm-9">
@@ -60,5 +60,20 @@
 	</div>
 </div>
 
+<script language="JavaScript" type="text/javascript"
+	xml:space="preserve">
+	var frmvalidator  = new Validator("cleaning");
+	frmvalidator.addValidation("name","req","Please enter your name");
+  
+	frmvalidator.addValidation("company","req","Please enter your company");
+  
+	frmvalidator.addValidation("email","req","Please enter your email");
+	frmvalidator.addValidation("email","email");
+  
+	frmvalidator.addValidation("phone","req","Please enter your phone");
+  
+	frmvalidator.addValidation("description","req","Please enter a part description");
+	
+//]]></script>
 
 
