@@ -16,7 +16,7 @@ class Email
     )
   end
   
-  def self.comment name, company, email, phone, comment
+  def self.respond name, company, email, phone, comment
 
     body = ''
     body << "<p>Name: #{name}</p>"
