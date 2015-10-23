@@ -63,6 +63,8 @@ post '/contact/?' do
     redirect '/contacts/thank-you'
   end
   
+  Email.contact(name, company, email, phone, comment)
+  
 end
 
 get "/contacts/thank-you/?" do
@@ -90,6 +92,8 @@ post '/cleaning/?' do
   else
     redirect '/contacts/thank-you'
   end
+  
+  Email.cleaning(name, company, email, phone, description)
   
 end
 
