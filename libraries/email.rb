@@ -16,41 +16,7 @@ class Email
     )
   end
   
-  def self.contact name, company, email, phone, comment
-
-    body = ''
-    body << "<p>Name: #{name}</p>"
-    body << "<p>Company: #{company}</p>"
-    body << "<p>Email: #{email}</p>"
-    body << "<p>Phone: #{phone}</p>"
-    body << "<p>Comment: #{comment}</p>"
-
-    Pony.mail(
-      headers: { 'Content-Type' => 'text/html' },
-      to: 'skip@tayloraid.com',
-      from: 'no-reply@dinamecsystems.com',
-      subject: 'Contact',
-      body: body
-    )
-  end
   
-  def self.cleaning name, company, email, phone, description
-
-    body = ''
-    body << "<p>Name: #{name}</p>"
-    body << "<p>Company: #{company}</p>"
-    body << "<p>Email: #{email}</p>"
-    body << "<p>Phone: #{phone}</p>"
-    body << "<p>Description: #{description}</p>"
-
-    Pony.mail(
-      headers: { 'Content-Type' => 'text/html' },
-      to: 'skip@tayloraid.com',
-      from: 'no-reply@dinamecsystems.com',
-      subject: 'Request for Sample Parts Cleaning',
-      body: body
-    )
-  end
 
 end
 
