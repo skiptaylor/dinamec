@@ -56,14 +56,10 @@ post '/contact/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  Email.respond(name, company, email, phone, comment)
     
-  if params["g-recaptcha-response"] == ""
-    flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
-    redirect '/contact'
-  else
-    redirect '/contacts/thank-you'
-  end
+  Email.respond(name, company, email, phone, comment)
+  
+  erb :"/contacts/thank-you"
   
 end
 
