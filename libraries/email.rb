@@ -19,11 +19,11 @@ class Email
   def self.contact name, company, email, phone, comment
 
     body = ''
-    body << "<p>Name: #{name}</p>"
-    body << "<p>Company: #{company}</p>"
-    body << "<p>Email: #{email}</p>"
-    body << "<p>Phone: #{phone}</p>"
-    body << "<p>Comment: #{comment}</p>"
+    body << "<p>Name: #{contct.name}</p>"
+    body << "<p>Company: #{contct.company}</p>"
+    body << "<p>Email: #{contct.email}</p>"
+    body << "<p>Phone: #{contct.phone}</p>"
+    body << "<p>Comment: #{contct.comment}</p>"
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
@@ -37,11 +37,11 @@ class Email
   def self.cleaning name, company, email, phone, description
 
     body = ''
-    body << "<p>Name: #{name}</p>"
-    body << "<p>Company: #{company}</p>"
-    body << "<p>Email: #{email}</p>"
-    body << "<p>Phone: #{phone}</p>"
-    body << "<p>Description: #{description}</p>"
+    body << "<p>Name: #{contct.name}</p>"
+    body << "<p>Company: #{contct.company}</p>"
+    body << "<p>Email: #{contct.email}</p>"
+    body << "<p>Phone: #{contct.phone}</p>"
+    body << "<p>Description: #{contct.description}</p>"
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
