@@ -22,7 +22,7 @@ post '/contacts/new_contact/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  Email.quote_request(machine_id, id, contact)
+  Email.contact(name, company, email, phone, comment)
   
   redirect '/dashboard'
 end
