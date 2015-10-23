@@ -56,8 +56,14 @@ post '/contact/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-    
-  Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
+  if params["g-recaptcha-response"] == ""
+    flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
+    redirect '/cleaning'
+  else
+    Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
+    redirect '/contacts/thank-you'
+  end 
+  
   
   erb :"/contacts/thank-you"
   
@@ -86,10 +92,11 @@ post '/cleaning/?' do
     flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
     redirect '/cleaning'
   else
+    Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
     redirect '/contacts/thank-you'
   end
   
-  Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
+  
   
 end
 
