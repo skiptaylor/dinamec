@@ -9,7 +9,7 @@ class Email
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
-      to: 'skip@tayloraid.com',
+      to: 'skip@tayloraid.com, cindy.maddox@dinamecsystems.com',
       from: 'no-reply@dinamecsystems.com',
       subject: 'Request for Parts Quote',
       body: body
@@ -27,7 +27,7 @@ class Email
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
-      to: 'skip@tayloraid.com',
+      to: 'skip@tayloraid.com, samantha.wilkins@dinamecsystems.com, drew.jones@dinamecsystems.com',
       from: 'no-reply@dinamecsystems.com',
       subject: 'Contact',
       body: body
@@ -45,7 +45,7 @@ class Email
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
-      to: 'skip@tayloraid.com',
+      to: 'skip@tayloraid.com, samantha.wilkins@dinamecsystems.com, drew.jones@dinamecsystems.com',
       from: 'no-reply@dinamecsystems.com',
       subject: 'Request for Sample Parts Cleaning',
       body: body
