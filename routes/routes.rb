@@ -60,10 +60,9 @@ post '/contact/?' do
     flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
     redirect '/contact'
   else
+    Email.respond(name, company, email, phone, comment)
     redirect '/contacts/thank-you'
   end
-  
-  Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
   
 end
 
