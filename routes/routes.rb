@@ -57,7 +57,7 @@ post '/contact/?' do
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
     
-  Email.respond(name, company, email, phone, comment)
+  Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
   
   erb :"/contacts/thank-you"
   
@@ -89,7 +89,7 @@ post '/cleaning/?' do
     redirect '/contacts/thank-you'
   end
   
-  Email.cleaning(name, company, email, phone, description)
+  Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
   
 end
 
