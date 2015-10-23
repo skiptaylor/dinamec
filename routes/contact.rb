@@ -22,7 +22,7 @@ post '/contacts/new_contact/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  Email.contact(name, company, email, phone, comment)
+  Email.contact(contact.name, contact.company, contact.email, contact.phone, contact.comment)
   
   redirect '/dashboard'
 end
