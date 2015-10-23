@@ -16,7 +16,7 @@ class Email
     )
   end
   
-  def self.contact name, company, email, phone, comment
+  def self.comment name, company, email, phone, comment
 
     body = ''
     body << "<p>Name: #{name}</p>"
@@ -45,7 +45,7 @@ class Email
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
-      to: 'tayloraid@me.com',
+      to: 'skip@tayloraid.com',
       from: 'no-reply@dinamecsystems.com',
       subject: 'Request for Sample Parts Cleaning',
       body: body

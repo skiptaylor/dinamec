@@ -63,7 +63,7 @@ post '/contact/?' do
     redirect '/contacts/thank-you'
   end
   
-  Email.contact(name, company, email, phone, comment)
+  Email.respond(name, company, email, phone, comment)
   
 end
 
