@@ -41,11 +41,11 @@ class Email
     body << "<p>Company: #{company}</p>"
     body << "<p>Email: #{email}</p>"
     body << "<p>Phone: #{phone}</p>"
-    body << "<p>Description: #{contct.description}</p>"
+    body << "<p>Description: #{description}</p>"
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
-      to: 'skip@tayloraid.com',
+      to: 'tayloraid@me.com',
       from: 'no-reply@dinamecsystems.com',
       subject: 'Request for Sample Parts Cleaning',
       body: body

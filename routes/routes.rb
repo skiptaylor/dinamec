@@ -63,7 +63,7 @@ post '/contact/?' do
     redirect '/contacts/thank-you'
   end
   
-  Email.contact(contact.name, contact.company, contact.email, contact.phone, contact.comment)
+  Email.contact(name, company, email, phone, comment)
   
 end
 
@@ -93,7 +93,7 @@ post '/cleaning/?' do
     redirect '/contacts/thank-you'
   end
   
-  Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
+  Email.cleaning(name, company, email, phone, description)
   
 end
 
