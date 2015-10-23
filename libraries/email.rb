@@ -16,7 +16,7 @@ class Email
     )
   end
   
-  def self.comment name, company, email, phone, comment
+  def self.contact name, company, email, phone, comment
 
     body = ''
     body << "<p>Name: #{name}</p>"
@@ -29,7 +29,7 @@ class Email
       headers: { 'Content-Type' => 'text/html' },
       to: 'skip@tayloraid.com',
       from: 'no-reply@dinamecsystems.com',
-      subject: 'Comment',
+      subject: 'Contact',
       body: body
     )
   end
