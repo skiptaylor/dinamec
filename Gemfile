@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
 
-gem 'rake', '~> 10.4.0'
+gem 'rake', '~> 10.5.0'
 gem 'chronic', '~> 0.9.1'
 gem 'jsmin', '>= 1.0.1'
 gem 'kramdown', '>= 0.14.2'

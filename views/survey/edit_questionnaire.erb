@@ -1,0 +1,270 @@
+<div class="white-ground">
+	<div id="tag">
+		<div class="top-bar">
+			<div class="container">
+				<h2 style="font-size: 2.5em; margin-top: 4px; letter-spacing: -1px; color: white;">Dinamec<span style="font-weight: 300; color: #b5b5b5;">Systems</span></h2>
+			</div>
+		</div>
+	<div class="container master-padding">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Thermal Cleaning Questionnaire</h2>
+				<h5 style="margin-top: -4px; margin-bottom: 18px;">Decoring of Aluminum Castings</h5>
+			</div>
+			<form class="form-horizontal" method="post" action=""  name="" id="">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="company" class="col-sm-3 control-label">Company</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="company" id="company" placeholder="Company" value="<%= @questionnaire.company %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="contact" class="col-sm-3 control-label">Contact</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="contact" id="contact" placeholder="Contact" value="<%= @questionnaire.contact %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="department" class="col-sm-3 control-label">Department</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="department" id="department" placeholder="Department" value="<%= @questionnaire.department %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="phone1" class="col-sm-3 control-label">Phone</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="phone1" id="phone1" placeholder="Phone" value="<%= @questionnaire.phone1 %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-sm-3 control-label">Email</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="email" id="email" placeholder="Email" value="<%= @questionnaire.email %>">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">  
+				<div class="form-group">
+					<label for="address1" class="col-sm-3 control-label">Address</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="address1" id="address1" placeholder="Address" value="<%= @questionnaire.address1 %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="address2" class="col-sm-3 control-label">Address</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="address2" id="address2" placeholder="Address" value="<%= @questionnaire.address2 %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="city" class="col-sm-3 control-label">City</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="city" id="city" placeholder="City" value="<%= @questionnaire.city %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="state" class="col-sm-3 control-label">State</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="state" id="state" placeholder="State" value="<%= @questionnaire.state %>">
+					</div>
+				</div>
+				<!-- <div class="form-group">
+					<label for="state" class="col-sm-3 control-label">State</label>
+					<div class="col-sm-9">
+						<input type="text" class="col-sm-3" autocomplete="off" data-provide="typeahead" value="<%= @questionnaire.state %>" data-items="8"  id="state" name="state"  data-source='["AL","AK","AZ","AR","CA","CO","CT","DC","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","MN","NY","ND","NC","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","VI","GU","PR","VI"]' />
+					</div>
+				</div> -->
+				
+				
+				
+				<div class="form-group">
+					<label for="zip" class="col-sm-3 control-label">Zip</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="zip" id="zip" placeholder="Zip" value="<%= @questionnaire.zip %>">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<h3>Organic Contaminated Part to be Cleaned &nbsp; <small>Please sample largest part</small></h3>
+	    
+		           
+		dem_measure    
+		casting_measure
+		core_measure
+			</div>
+			<div class="col-md-12">
+
+				<div class="form-group">
+					<label for="casting_name" class="col-sm-3 control-label">Casting Name</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="casting_name" id="casting_name" placeholder="Casting name" value="<%= @questionnaire.casting_name %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="alloy" class="col-sm-3 control-label">Type of Alloy</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="alloy" id="alloy" placeholder="Type of alloy" value="<%= @questionnaire.alloy %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="qty_day" class="col-sm-3 control-label">Qty per day</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="qty_day" id="qty_day" placeholder="Quantity" value="<%= @questionnaire.qty_day %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="col-sm-3 control-label">Deminsions &nbsp; <select type="text" name="type">
+							<option value="in" <%= 'selected' if @questionnaire.dem_measure == 'in' %>>in</option>
+							<option value="mm" <%= 'selected' if @questionnaire.dem_measure == 'mm' %>>mm</option>
+						</select></label>
+					<div class="col-sm-9">
+						<div class="input-group">
+							<div class="input-group-addon"><small>Diameter</small></div>
+							<input type="text" class="form-control" name="dem_length" id="dem_length" placeholder="Length" value="<%= @questionnaire.dem_length %>">
+							<div class="input-group-addon"><small>X</small></div>
+							<input type="text" class="form-control" name="dem_width" id="dem_width" placeholder="Width" value="<%= @questionnaire.dem_width %>">
+							<div class="input-group-addon"><small>X</small></div>
+							<input type="text" class="form-control" name="dem_height" id="dem_height" placeholder="Height" value="<%= @questionnaire.dem_height %>">
+						</div>
+						
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="casting_weight" class="col-sm-3 control-label">Casting Weight &nbsp; <select type="text" name="type">
+							<option value="lb" <%= 'selected' if @questionnaire.casting_measure == 'lb' %>>lb</option>
+							<option value="kg" <%= 'selected' if @questionnaire.casting_measure == 'kg' %>>kg</option>
+						</select></label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="casting_weight" id="casting_weight" placeholder="Casting Weight" value="<%= @questionnaire.casting_weight %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="core_weight" class="col-sm-3 control-label">Mold Core Weight &nbsp; <select type="text" name="type">
+							<option value="lb" <%= 'selected' if @questionnaire.core_measure == 'lb' %>>lb</option>
+							<option value="kg" <%= 'selected' if @questionnaire.core_measure == 'kg' %>>kg</option>
+						</select></label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="core_weight" id="core_weight" placeholder="Core Weight" value="<%= @questionnaire.core_weight %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="sand" class="col-sm-3 control-label">Type of Sand Used</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="sand" id="sand" placeholder="AFS Number" value="<%= @questionnaire.sand %>">
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<div class="row form-horizontal">
+			<div class="col-md-12">
+				<div class="form-group">
+					<label for="instructions" class="col-sm-3 control-label">Special cleaning instructions</label>
+					<div class="col-sm-9">
+						<textarea type="text" class="form-control" id="instructions" name="instructions" rows="2" placeholder="Instructions"><%= @questionnaire.instructions %></textarea>
+					</div>
+				</div>
+			<!-- </div>
+			<div class="col-md-6"> -->
+				<div class="form-group">
+					<label for="temperature" class="col-sm-3 control-label">Temperature limit of castings</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" name="temperature" id="temperature" placeholder="Temperature" value="<%= @questionnaire.temperature %>">
+					</div>
+				</div>
+				<!-- <div class="form-group">
+					<label for=":msds" class="col-sm-3 control-label">MSDS</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" name="msds" id="msds" placeholder="MSDS" value="<%= @questionnaire.msds %>">
+					</div>
+				</div> -->
+				<div class="form-group">
+					<label for=":msds" class="col-sm-3 control-label">Working time</label>
+					<div class="col-md-4">
+					<div class="input-group">
+						<input type="text" class="form-control" name="day" id="day" placeholder="" value="<%= @questionnaire.day %>"> 
+						<div class="input-group-addon"><small>Hours/Days/Weeks</small></div>
+					</div>
+				</div>  
+			</div>
+		
+			
+			
+			
+			<div class="form-group">
+				<label for="" class="col-sm-3 control-label">Energy supply availavle</label>
+				<div class="col-sm-1">
+					<div class="checkbox">
+						<div class="input-group">
+						    <label>
+						      <input type="checkbox"> Gas 
+						    </label>
+						</div>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="input-group-addon"><small>Type & available pressure</small></div>
+					<input type="text" class="form-control" name="pressure" id="pressure" placeholder="" value="<%= @questionnaire.pressure %>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="col-sm-3 control-label"></label>
+				<div class="col-sm-1">
+					<div class="checkbox">
+						<div class="input-group">
+						    <label>
+						      <input type="checkbox"> Air
+						    </label>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="input-group">
+						<div class="input-group-addon"><small>Compressed Air</small></div>
+						<input type="text" class="form-control" name="pressure" id="pressure" placeholder="" value="<%= @questionnaire.pressure %>">
+						<div class="input-group-addon"><small>psi</small></div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+				<div class="input-group">
+					<div class="input-group-addon"><small>Voltage</small></div>
+					<input type="text" class="form-control" name="voltage_v" id="voltage_v" placeholder="" value="<%= @questionnaire.voltage_v %>">
+					<div class="input-group-addon"><small>V</small></div>
+					<input type="text" class="form-control" name="voltage_hz" id="voltage_hz" placeholder="" value="<%= @questionnaire.voltage_hz %>">
+					<div class="input-group-addon"><small>Hz</small></div>
+					
+				</div>
+			</div>
+			</div>
+			</div>
+			
+			
+			
+			<div class="form-group">
+				<label for="process" class="col-sm-3 control-label">Your current decoring process</label>
+				<div class="col-sm-9">
+					<textarea type="text" class="form-control" id="process" name="process" rows="2" placeholder="Process"><%= @questionnaire.process %></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="issues" class="col-sm-3 control-label">Issues with current process</label>
+				<div class="col-sm-9">
+					<textarea type="text" class="form-control" id="issues" name="issues" rows="2" placeholder="Issues"><%= @questionnaire.issues %></textarea>
+				</div>
+			</div>
+			
+			
+				  
+				  <div class="form-group">
+					  <label for="submit" class="col-sm-3 control-label"> </label>
+					  <div class="col-sm-9">
+						  <button type="submit" class="btn btn-default btn-success">Submit</button>
+				  		</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
