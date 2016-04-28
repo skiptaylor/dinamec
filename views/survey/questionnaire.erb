@@ -1,0 +1,113 @@
+<div class="white-ground">
+	<div id="tag">
+		<div class="container">
+			<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+		</div>
+	<div class="container master-padding">
+		<div class="row">
+			<div class="col-md-12">
+				
+				<a class="btn btn-sm btn-default pull-right" href="/survey/questionnaires">Index</a>
+				<h2>Thermal Cleaning Questionnaire</h2>
+				<hr />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt style="margin-bottom: 9px;">Company</dt>
+				  <dd><%= @questionnaire.company %></dd>
+  				
+  				  <dt style="margin-bottom: 18px;">Address</dt>
+  				  <dd style="margin-bottom: 18px;"><%= @questionnaire.address1 %><br />
+  					  <% unless @questionnaire.address2 == "" %><%= @questionnaire.address2 %><br /><% end %>
+  				  <%= @questionnaire.city %> &nbsp;<%= @questionnaire.state %> &nbsp;<%= @questionnaire.zip %></dd>
+					<dt><small>Submit Date</small></dt>
+				  <dd><small><%= @questionnaire.created_at.strftime("%d %B %Y") %></small></dd>
+  				</dl>
+			</div>
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt style="margin-bottom: 9px;">Contact</dt>
+					<dd><%= @questionnaire.contact %></dd>
+					<dt style="margin-bottom: 9px;">Deaprtment</dt>
+					<dd><%= @questionnaire.department %></dd>
+					<dt style="margin-bottom: 9px;">Phone</dt>
+					<dd><%= @questionnaire.phone1 %></dd>
+					<dt>Email</dt>
+					<dd><a href="mailto:<%= @questionnaire.email %>"><%= @questionnaire.email %></a></dd>
+				</dl>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">	
+			<hr />
+			<h3>Part to be cleaned</h3>
+				<dl class="dl-horizontal">
+					<dt style="margin-bottom: 9px;">Casting Name</dt>
+					<dd><%= @questionnaire.casting_name %></dd>
+					
+					<dt style="margin-bottom: 9px;">Type of Alloy</dt>
+					<dd><%= @questionnaire.alloy %></dd>
+					
+					<dt style="margin-bottom: 9px;">Quantity per Day</dt>
+					<dd><%= @questionnaire.qty_day %></dd>
+					
+					<dt style="margin-bottom: 9px;">Deminsions</dt>
+					<dd><small>L</small> <%= @questionnaire.dem_length %>&nbsp; &nbsp; &nbsp;<small>W</small> <%= @questionnaire.dem_width %>&nbsp; &nbsp; &nbsp;<small>H</small> <%= @questionnaire.dem_height %>&nbsp; &nbsp; &nbsp;<%= @questionnaire.dem_measure %></dd>
+			
+					<dt style="margin-bottom: 9px;">Casting Weight</dt>
+					<dd><%= @questionnaire.casting_weight %>&nbsp; &nbsp; &nbsp;<%= @questionnaire.casting_measure %></dd>
+					
+					<dt style="margin-bottom: 9px;">Mold Core Weight</dt>
+					<dd><%= @questionnaire.core_weight %>&nbsp; &nbsp; &nbsp;<%= @questionnaire.core_measure %></dd>
+					
+					<dt style="margin-bottom: 9px;">Type of Sand</dt>
+					<dd><%= @questionnaire.sand %></dd>
+					
+				</dl>
+			</div>
+			<div class="col-md-6">
+				<hr />
+				<dl class="dl-horizontal">
+					<dt style="margin-bottom: 9px;">Cleaning Instructions</dt>
+					<dd style="margin-bottom: 9px;"><%= @questionnaire.instructions %></dd>
+					
+					<dt style="margin-bottom: 9px;">Temperature Limit</dt>
+					<dd><%= @questionnaire.temperature %></dd>
+					
+					<dt style="margin-bottom: 9px;">Working Time</dt>
+					<dd><%= @questionnaire.day %></dd>
+					
+					<dt style="margin-bottom: 9px;">Energy Supply</dt>
+					<dd><strong>Gas</strong> <%= @questionnaire.pressure %></dd>
+					<dd style="margin-bottom: 9px;"><strong>Air</strong> <%= @questionnaire.psi %> <small>psi</small> - <%= @questionnaire.voltage_v %> <small>V</small> - <%= @questionnaire.voltage_hz %> <small>Hz</small></dd>
+					
+					<dt style="margin-bottom: 9px;">Current Process</dt>
+					<dd style="margin-bottom: 9px;"><%= @questionnaire.process %></dd>
+					
+					<dt style="margin-bottom: 9px;">Current Issues</dt>
+					<dd><%= @questionnaire.issues %></dd>
+					
+				</dl>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<hr />
+				<form class="form-horizontal" method="post" action=""  name="" id="">
+					<div class="form-group">
+						<label for="msds" class="col-sm-4 control-label">Date customer contacted</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="msds" id="msds" placeholder="" value="<%= @questionnaire.msds %>">
+							
+						</div>
+						<button type="submit" class="btn btn-default btn-success">Save</button>
+					</div>
+ 				  
+				</form>
+				
+			</div>	
+		</div>
+	</div>
+</div>

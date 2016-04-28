@@ -1,6 +1,6 @@
-get '/survey/questionnaire/?' do
+get '/survey/questionnaires/?' do
 	@questionnaire = Questionnaire.all
-	erb :'/survey/questionnaire'
+	erb :'/survey/questionnaires'
 end
 
 get '/survey/new_questionnaire/?' do
@@ -31,7 +31,6 @@ post '/survey/new_questionnaire/?' do
     :psi              => params[:psi],
     :voltage_v        => params[:voltage_v],
     :voltage_hz       => params[:voltage_hz],
-    :msds             => params[:msds],
     :casting_name     => params[:casting_name],
     :alloy            => params[:alloy],
     :qty_day          => params[:qty_day],
@@ -46,8 +45,6 @@ post '/survey/new_questionnaire/?' do
     :core_measure     => params[:core_measure]   
   ) 
     
-
-    
   redirect "/survey/questionnaire_thanks"
 end
 
@@ -57,16 +54,28 @@ get '/survey/questionnaire_thanks/?' do
 end
 
 get '/survey/:id/questionnaire/?' do
+  auth_admin
   @questionnaire = Questionnaire.get(params[:id])
   erb :'/survey/questionnaire'
 end
 
+post '/survey/:id/questionnaire/?' do
+  auth_admin
+  questionnaire = Questionnaire.get(params[:id])
+  questionnaire.update(
+    :msds          => params[:msds]
+  )
+  erb :'/survey/questionnaires'
+end
+
 get '/survey/edit_questionnaire/?' do
+  auth_admin
   @questionnaire = Questionnaire.get(params[:id])
   erb :'/survey/edit_questionnaire'
 end
 
 post '/survey/edit_questionnaire/?' do
+  auth_admin
   questionnaire = Questionnaire.get(params[:id])
   questionnaire.update(
     :company          => params[:company],
@@ -90,7 +99,6 @@ post '/survey/edit_questionnaire/?' do
     :psi              => params[:psi],
     :voltage_v        => params[:voltage_v],
     :voltage_hz       => params[:voltage_hz],
-    :msds             => params[:msds],
     :casting_name     => params[:casting_name],
     :alloy            => params[:alloy],
     :qty_day          => params[:qty_day],
@@ -105,9 +113,6 @@ post '/survey/edit_questionnaire/?' do
     :core_measure     => params[:core_measure]   
 ) 
   
- params[:gas] ? questionnaire.update(gas: true) : questionnaire.update(gas: false)
- params[:air] ? questionnaire.update(air: true) : questionnaire.update(air: false)
-
   redirect '/index'
 end
 
@@ -115,5 +120,5 @@ get '/survey/:id/delete/?' do
   auth_admin
   contact = Contact.get(params[:id])
   contact.destroy
-  redirect '/dashboard'
+  redirect '/survey/questionnaires'
 end

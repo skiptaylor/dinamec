@@ -84,10 +84,11 @@
 				<li class="<%= active 'news' %>"><a href="/news/articles">News</a></li>
 				<li class="<%= active 'contact' %>"><a href="/contact">Contact Us</a></li>
             <% if session[:admin] %>
-				<li class="dropdown <%= active ['dashboard', 'user', 'companies', 'article', 'machine', 'company'] %>">
+				<li class="dropdown <%= active ['dashboard', 'questionnaires', 'user', 'companies', 'article', 'machine', 'company'] %>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li class="<%= active 'dashboard' %>"><a href="/dashboard">Dashboard</a></li>
+					 <li class="<%= active 'questionnaires' %>"><a href="/survey/questionnaires">Questionnaires</a></li>
 					 <li class="<%= active 'articles' %>"><a href="/articles/articles">Articles</a></li>
                 <li class="divider"></li>
 					 <li class="<%= active 'companies' %>"><a href="/companies">Companies</a></li>

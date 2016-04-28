@@ -1,0 +1,39 @@
+<div class="white-ground">
+	<div id="tag">
+		<div class="container">
+			<h2 style="font-size: 2em; letter-spacing: -1px;">Dinamec<span style="font-weight: 300; color: #95989c;">Systems</span></h2>
+		</div>
+	<div class="container master-padding">
+		<div class="row">
+			<div class="col-md-12">
+				<a class="btn btn-sm btn-default pull-right" href="/dashboard">Dashboard</a>
+				<h2>Thermal Cleaning Questionnaires</h2>
+			</div>
+			<div class="col-md-12">
+				<table class="table table-striped table-condensed table-hover">
+					<tr>
+						<th></th>
+						<th>Submitted</th>
+						<th>Company</th>
+						<th>Contact</th>
+						<th>Phone</th>
+						<th>Email</th>
+						<td align="right"></td>
+					</tr>
+					<% @questionnaire = Questionnaire.all %>
+					<% @questionnaire.sort{|a,b| b.created_at <=> a.created_at}.each do |q| %>
+					<tr>
+						<td class="center"><% if q.msds %><span style="color: #3aa839;" class="glyphicon glyphicon-check" aria-hidden="true"></span><% else %><span style="color: #4db4f4;" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span><% end %></td>
+						<td><small><%= q.created_at.strftime("%d %B %Y") %></small></td>
+						<td><%= q.company %></td>
+						<td><%= q.contact %></td>
+						<td><%= q.phone1 %></td>
+						<td><a href="mailto:<%= q.email %>"><%= q.email %></a></td>
+						<td style="text-align: right;"><a class="btn btn-xs btn-info" href="/survey/<%= q.id %>/questionnaire">View</td>
+					</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

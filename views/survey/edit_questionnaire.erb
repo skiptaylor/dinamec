@@ -110,7 +110,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="" class="col-sm-3 control-label">Deminsions &nbsp; <select type="text" name="type">
+					<label for="" class="col-sm-3 control-label">Deminsions &nbsp; <select type="text" name="dem_measure" id="dem_measure">
 							<option value="in" <%= 'selected' if @questionnaire.dem_measure == 'in' %>>in</option>
 							<option value="mm" <%= 'selected' if @questionnaire.dem_measure == 'mm' %>>mm</option>
 						</select></label>
@@ -127,7 +127,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="casting_weight" class="col-sm-3 control-label">Casting Weight &nbsp; <select type="text" name="type">
+					<label for="casting_weight" class="col-sm-3 control-label">Casting Weight &nbsp; <select type="text" name="casting_measure" id="casting_measure">
 							<option value="lb" <%= 'selected' if @questionnaire.casting_measure == 'lb' %>>lb</option>
 							<option value="kg" <%= 'selected' if @questionnaire.casting_measure == 'kg' %>>kg</option>
 						</select></label>
@@ -136,7 +136,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="core_weight" class="col-sm-3 control-label">Mold Core Weight &nbsp; <select type="text" name="type">
+					<label for="core_weight" class="col-sm-3 control-label">Mold Core Weight &nbsp; <select type="text" name="core_measure" id="core_measure">
 							<option value="lb" <%= 'selected' if @questionnaire.core_measure == 'lb' %>>lb</option>
 							<option value="kg" <%= 'selected' if @questionnaire.core_measure == 'kg' %>>kg</option>
 						</select></label>
@@ -218,7 +218,7 @@
 				<div class="col-sm-3">
 					<div class="input-group">
 						<div class="input-group-addon"><small>Compressed Air</small></div>
-						<input type="text" class="form-control" name="pressure" id="pressure" placeholder="" value="<%= @questionnaire.pressure %>">
+						<input type="text" class="form-control" name="psi" id="psi" placeholder="" value="<%= @questionnaire.psi %>">
 						<div class="input-group-addon"><small>psi</small></div>
 					</div>
 				</div>
