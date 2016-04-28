@@ -54,13 +54,13 @@
 					<dd><%= @questionnaire.qty_day %></dd>
 					
 					<dt style="margin-bottom: 9px;">Deminsions</dt>
-					<dd><small>L</small> <%= @questionnaire.dem_length %>&nbsp; &nbsp; &nbsp;<small>W</small> <%= @questionnaire.dem_width %>&nbsp; &nbsp; &nbsp;<small>H</small> <%= @questionnaire.dem_height %>&nbsp; &nbsp; &nbsp;<%= @questionnaire.dem_measure %></dd>
+					<dd><small>L</small> <%= @questionnaire.dem_length %>&nbsp; &nbsp; &nbsp;<small>W</small> <%= @questionnaire.dem_width %>&nbsp; &nbsp; &nbsp;<small>H</small> <%= @questionnaire.dem_height %>&nbsp; &nbsp; &nbsp;<small><%= @questionnaire.dem_measure %></small></dd>
 			
 					<dt style="margin-bottom: 9px;">Casting Weight</dt>
-					<dd><%= @questionnaire.casting_weight %>&nbsp; &nbsp; &nbsp;<%= @questionnaire.casting_measure %></dd>
+					<dd><%= @questionnaire.casting_weight %>&nbsp; &nbsp; &nbsp;<small><%= @questionnaire.casting_measure %></small></dd>
 					
 					<dt style="margin-bottom: 9px;">Mold Core Weight</dt>
-					<dd><%= @questionnaire.core_weight %>&nbsp; &nbsp; &nbsp;<%= @questionnaire.core_measure %></dd>
+					<dd><%= @questionnaire.core_weight %>&nbsp; &nbsp; &nbsp;<small><%= @questionnaire.core_measure %></small></dd>
 					
 					<dt style="margin-bottom: 9px;">Type of Sand</dt>
 					<dd><%= @questionnaire.sand %></dd>
