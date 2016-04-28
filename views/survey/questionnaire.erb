@@ -97,12 +97,12 @@
 				<hr />
 				<form class="form-horizontal" method="post" action=""  name="" id="">
 					<div class="form-group">
-						<label for="msds" class="col-sm-4 control-label">Date customer contacted</label>
+						<label for="msds" class="col-sm-3 control-label">Date customer contacted</label>
 						<div class="col-sm-4">
 							<input type="text" class="form-control" name="msds" id="msds" placeholder="" value="<%= @questionnaire.msds %>">
-							
 						</div>
 						<button type="submit" class="btn btn-default btn-success">Save</button>
+						<a href="/survey/<%= @questionnaire.id %>/delete" Style="margin-right: 3em;" class="btn btn-default btn-danger pull-right delete">Delete</a>
 					</div>
  				  
 				</form>

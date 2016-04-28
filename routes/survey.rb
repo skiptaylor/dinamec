@@ -118,7 +118,8 @@ end
 
 get '/survey/:id/delete/?' do
   auth_admin
-  contact = Contact.get(params[:id])
-  contact.destroy
+  questionnaire = Questionnaire.get(params[:id])
+  questionnaire.destroy
+  
   redirect '/survey/questionnaires'
 end
