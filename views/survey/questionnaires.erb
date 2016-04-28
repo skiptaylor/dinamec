@@ -23,7 +23,7 @@
 					<% @questionnaire = Questionnaire.all %>
 					<% @questionnaire.sort{|a,b| b.created_at <=> a.created_at}.each do |q| %>
 					<tr>
-						<td class="center"><% unless q.msds == nil %><span style="color: #3aa839;" class="glyphicon glyphicon-check" aria-hidden="true"></span><% else %><span style="color: #4db4f4;" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span><% end %></td>
+						<td class="center"><% unless q.msds == "" || q.msds == nil %><span style="color: #3aa839;" class="glyphicon glyphicon-check" aria-hidden="true"></span><% else %><span style="color: #4db4f4;" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span><% end %></td>
 						<td><small><%= q.created_at.strftime("%d %B %Y") %></small></td>
 						<td><%= q.company %></td>
 						<td><%= q.contact %></td>
