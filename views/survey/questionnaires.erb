@@ -18,7 +18,7 @@
 						<th>Contact</th>
 						<th>Phone</th>
 						<th>Email</th>
-						<td align="right"></td>
+						<td align="right"><a class="btn btn-xs btn-success" href="/survey/new_questionnaire">New</a></td>
 					</tr>
 					<% @questionnaire = Questionnaire.all %>
 					<% @questionnaire.sort{|a,b| b.created_at <=> a.created_at}.each do |q| %>
@@ -29,7 +29,7 @@
 						<td><%= q.contact %></td>
 						<td><%= q.phone1 %></td>
 						<td><a href="mailto:<%= q.email %>"><%= q.email %></a></td>
-						<td style="text-align: right;"><a class="btn btn-xs btn-info" href="/survey/<%= q.id %>/questionnaire">View</td>
+						<td style="text-align: right;"><a class="btn btn-xs btn-info" href="/survey/<%= q.id %>/questionnaire">View</a></td>
 					</tr>
 					<% end %>
 				</table>
