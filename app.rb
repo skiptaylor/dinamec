@@ -23,4 +23,14 @@ require_directory([
   'routes'
 ])
 
+configure :production do
+  before do
+    unless request.request_method == 'POST'
+      unless request.url.include? "http://www."
+        redirect "http://www.dinamecsystems.com#{request.path}"
+      end
+    end
+  end
+end
+
 DataMapper.finalize
