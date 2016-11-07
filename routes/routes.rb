@@ -6,16 +6,16 @@ get '/index/?' do
   erb :"/index"
 end
 
-get '/industries/?' do
-  erb :"/industries"
+get '/thermal-cleaning/industries/?' do
+  erb :"/thermal-cleaning/industries"
 end
 
-get '/product/?' do
-  erb :"/product"
+get '/thermal-cleaning/product/?' do
+  erb :"/thermal-cleaning/product"
 end
 
-get '/process/?' do
-  erb :"/process"
+get '/thermal-cleaning/process/?' do
+  erb :"/thermal-cleaning/process"
 end
 
 get '/service/?' do
