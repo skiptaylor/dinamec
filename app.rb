@@ -26,8 +26,8 @@ require_directory([
 configure :production do
   before do
     unless request.request_method == 'POST'
-      unless request.url.include? "http://www."
-        redirect "http://www.dinamecsystems.com#{request.path}"
+      unless request.url.include? "https://www."
+        redirect "https://www.dinamecsystems.com#{request.path}"
       end
     end
   end
