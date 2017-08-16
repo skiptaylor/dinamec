@@ -1,20 +1,19 @@
-<img src="/img/ribbon.png" style="position: absolute; right: 3%; top: 44px; z-index: 1000;" />
+<img src="/img/ribbon.png" style="position: absolute; right: 3%; top: 44px; z-index: 1000; width: 170px;" class="hidden-xs" />
 
 <div class="white-ground">
 	<div id="tag">
-		<div class="top-bar">
-			<div class="container">
-				<h2 style="font-size: 2.5em; margin-top: 4px; letter-spacing: -1px; color: white;">Dinamec<span style="font-weight: 300; color: #b5b5b5;">Systems</span></h2>
-			</div>
-		</div>
 		<div class="container">
-			<img src="/img/fluid-clean-logo.png" class="border shadow hidden-xs" style="background-color: white; padding-top: 8px; margin: -45px 150px 0 330px;" />
-			
-			<img src="/img/fluid-clean-logo.png" class="border shadow visible-xs" style="padding-top: 8px; margin: 24px 98px 0 0;" />
+			<img src="/img/dinamec-logo-notag.png" style="width: 180px; margin-top: 14px;">
+			<img src="/img/fluid-clean-logo.png" class="border shadow hidden-xs" style="width: 180px; padding-top: 8px; margin-top: 16px; margin-left: 62px;" />
 		</div>
+		
+		<div class="top-bar" style="margin-top: 12px; font-size: 0.45em;">&nbsp;</div>
+	</div>			
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4" style="margin-top: 0; margin-bottom: 3em;">
+					<img src="/img/fluid-clean-logo.png" class="border shadow visible-xs" style="width: 180px; padding-top: 8px; margin-top: 16px;" />
 					<h1>News</h1>
 					<% Article.all.sort{|a,b| b.date <=> a.date}.each do |article| %>
 						<p class="news-date"><%= article.date.strftime("%B %d, %Y") %></p>
@@ -22,6 +21,7 @@
 					<% end %>
 				</div>
 				<div class="col-md-8" style="margin-top: 3em; margin-bottom: 3em;">
+					
 					<p><%= @article.date.strftime("%B %d, %Y") %></p>
 					<hr />
 					<h4 style="font-size: 2em;"><%= @article.title %></h4>
