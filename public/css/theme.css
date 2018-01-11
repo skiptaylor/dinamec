@@ -459,9 +459,9 @@ table#beds tr.type2 th	{
 
 table#beds tr td	{
 	padding-left: 18px;
-	padding-bottom: 6px;
+	padding-bottom: 3px;
 	padding-right: 18px;
-	padding-top: 6px;
+	padding-top: 3px;
 	background-color: #eaeaea;
 	border: #b5b5b5 1px solid;
 }
