@@ -26,6 +26,11 @@ get '/customers/?' do
   erb :"/customers"
 end
 
+get '/ani/?' do
+  erb :"/ani"
+end
+
+
 get '/news/?' do
 	@article = Article.all(:order => :date.desc)
 	erb :'/news'
