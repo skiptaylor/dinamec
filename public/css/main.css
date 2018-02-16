@@ -1,20 +1,10 @@
-.air-flow {
-	stroke-dasharray: 38;
-	stroke-dashoffset: 306;
-	animation: dash 4s linear infinite;
-}
-.heat-flow {
-	stroke-dasharray: 38;
-	stroke-dashoffset: 306;
-	animation: dash 4s linear infinite;
-}
 
-@keyframes dash {
+/*@keyframes dash {
 	to {
 		stroke-dashoffset: 0;
 	}
 }
-
+*/
 
 .dev-header  {
 	font-family: 'Open Sans', sans-serif;

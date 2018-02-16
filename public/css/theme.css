@@ -468,23 +468,7 @@ table#beds tr td	{
 }
 
 
-.air-flow {
-	stroke-dasharray: 38;
-	stroke-dashoffset: 306;
-	animation: dash 4s linear infinite forwards;
-}
-.heat-flow {
-	stroke-dasharray: 38;
-	stroke-dashoffset: 306;
-	animation: dash 4s linear infinite forwards;
-}
 
-@keyframes dash {
-	from	{}
-	to {
-		stroke-dashoffset: 0;
-	}
-}
 
 
 #tag {
