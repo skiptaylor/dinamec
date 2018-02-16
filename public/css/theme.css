@@ -298,7 +298,9 @@ label	{
 	padding-top: 9px;
 }
 
-
+.black	{
+	font-weight: 700;;
+}
 
 .bar	{
 	background-color: #677f97;
@@ -355,7 +357,6 @@ div.tag-xm	{
 	color: #e5e5e5;
 	width: 90%;
 }
-
 
 /*------------   Footer   --------------*/
 

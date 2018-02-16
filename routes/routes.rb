@@ -30,6 +30,10 @@ get '/process-ani/?' do
   erb :"/process-ani"
 end
 
+get '/thermal-cleaning/process-animation/?' do
+  erb :"/thermal-cleaning/process-animation"
+end
+
 
 get '/news/?' do
 	@article = Article.all(:order => :date.desc)
