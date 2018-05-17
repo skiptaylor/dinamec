@@ -6,3 +6,5 @@
 .sass-cache
 
 *.sqlite3
+
+public/img/dinamec-logo.svg
