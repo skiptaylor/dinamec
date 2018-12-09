@@ -56,6 +56,9 @@ get "/contact/?" do
 end
 
 post '/contact/?' do
+  
+  if params[:email_name] == ""
+    
   contact = Contact.create(
     :name         => params[:name],
     :company      => params[:company],
@@ -65,16 +68,12 @@ post '/contact/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  if params["g-recaptcha-response"] == ""
-    flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
-    redirect '/cleaning'
-  else
+  
     Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
     redirect '/contacts/thank-you'
   end 
   
-  
-  erb :"/contacts/thank-you"
+  # erb :"/contacts/thank-you"
   
 end
 
@@ -97,10 +96,8 @@ post '/cleaning/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  if params[:email_name] == ""
     Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
     redirect '/contacts/thank-you'
-  end
   
 end
 
