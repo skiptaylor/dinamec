@@ -18,8 +18,6 @@ class Email
   
   def self.respond name, company, email, phone, comment
     
-    
-
     body = ''
     body << "<p>Name: #{name}</p>"
     body << "<p>Company: #{company}</p>"
@@ -27,7 +25,6 @@ class Email
     body << "<p>Phone: #{phone}</p>"
     body << "<p>Comment: #{comment}</p>"
     
-
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
       to: 'skip@tayloraid.com, samantha.wilkins@dinamecsystems.com, drew.jones@dinamecsystems.com',
@@ -35,8 +32,6 @@ class Email
       subject: 'Contact',
       body: body
     )
-    
- 
   end
   
   def self.cleaning name, company, email, phone, description
