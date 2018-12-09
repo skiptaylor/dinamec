@@ -97,15 +97,10 @@ post '/cleaning/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  if params["g-recaptcha-response"] == ""
-    flash[:alert] = 'Are you a Robot?. Please complete Captcha.'
-    redirect '/cleaning'
-  else
+  if params[:email_name] == ""
     Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
     redirect '/contacts/thank-you'
   end
-  
-  
   
 end
 

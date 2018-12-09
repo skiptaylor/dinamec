@@ -22,13 +22,10 @@ post '/contacts/new_contact/?' do
   )
   params[:archive] ? contact.update(archive: true) : contact.update(archive: false)
   
-  if params[:email_name] == ""
-  
   Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
   
   redirect '/dashboard'
   
-  end
 end
 
 get '/contacts/:id/contact/?' do
