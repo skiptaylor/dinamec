@@ -17,6 +17,8 @@ class Email
   end
   
   def self.respond name, company, email, phone, comment
+    
+    if params[:email_name] == ""
 
     body = ''
     body << "<p>Name: #{name}</p>"
@@ -25,7 +27,6 @@ class Email
     body << "<p>Phone: #{phone}</p>"
     body << "<p>Comment: #{comment}</p>"
     
-    if params[:email_name] == ""
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
@@ -35,7 +36,7 @@ class Email
       body: body
     )
     
-    end
+  end
   end
   
   def self.cleaning name, company, email, phone, description
