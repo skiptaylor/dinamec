@@ -18,7 +18,7 @@ class Email
   
   def self.respond name, company, email, phone, comment
     
-    if params[:email_name] == ""
+    
 
     body = ''
     body << "<p>Name: #{name}</p>"
@@ -36,7 +36,7 @@ class Email
       body: body
     )
     
-  end
+ 
   end
   
   def self.cleaning name, company, email, phone, description
