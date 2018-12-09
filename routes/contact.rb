@@ -26,9 +26,9 @@ post '/contacts/new_contact/?' do
   
   Email.respond(contact.name, contact.company, contact.email, contact.phone, contact.comment)
   
-  end
-  
   redirect '/dashboard'
+  
+  end
 end
 
 get '/contacts/:id/contact/?' do
