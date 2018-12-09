@@ -24,6 +24,8 @@ class Email
     body << "<p>Email: #{email}</p>"
     body << "<p>Phone: #{phone}</p>"
     body << "<p>Comment: #{comment}</p>"
+    
+    if params[:email_name] == ""
 
     Pony.mail(
       headers: { 'Content-Type' => 'text/html' },
@@ -32,6 +34,8 @@ class Email
       subject: 'Contact',
       body: body
     )
+    
+    end
   end
   
   def self.cleaning name, company, email, phone, description
