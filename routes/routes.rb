@@ -87,6 +87,9 @@ get "/cleaning/?" do
 end
 
 post '/cleaning/?' do
+  
+  if params[:email_name] == ""
+    
   contact = Contact.create(
     :name         => params[:name],
     :company      => params[:company],
@@ -99,6 +102,7 @@ post '/cleaning/?' do
     Email.cleaning(contact.name, contact.company, contact.email, contact.phone, contact.description)
     redirect '/contacts/thank-you'
   
+  end
 end
 
 get "/signin/?" do
