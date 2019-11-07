@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.6.3'
 
 gem 'rake', '~> 10.5.0'
 gem 'chronic', '~> 0.9.1'
