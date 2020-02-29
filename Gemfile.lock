@@ -96,7 +96,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rake (10.5.0)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -142,7 +142,7 @@ DEPENDENCIES
   jsmin (>= 1.0.1)
   kramdown (>= 0.14.2)
   pony (~> 1.4)
-  rake (~> 10.5.0)
+  rake (~> 12.3.3)
   sinatra (>= 1.4.3)
   sinatra-chassis (>= 1.1.1)
   sinatra-contrib (>= 1.4.0)
