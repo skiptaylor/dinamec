@@ -1,9 +1,9 @@
 <div id="top">  </div>
-	<div id="mySidenav" class="sidenav">
-	  <a href="#firstModal" id="covid" data-toggle="modal">&nbsp;&nbsp;Covid-19 Notice</a>
-	  <a href="#secondModal" id="letter" data-toggle="modal"> &nbsp;&nbsp; Social Update</a>
-	</div>
 	
+	<!-- <div id="mySidenav" class="sidenav">
+	  <a href="#firstModal" id="covid" data-toggle="modal">Covid-19 Notice</a>
+	  <a href="#secondModal" id="letter" data-toggle="modal">Operational Update</a>
+	</div> -->
 
 	<div class="row">	
 		
@@ -83,7 +83,7 @@
 		<i class="icon-chevron-down icon-white"></i>
 	</a> -->
 
-<img src="/img/ribbon.png" style="position: absolute; right: 3%; top: 44px; z-index: 1000;" class="hidden-xs" />
+<!-- <img src="/img/ribbon.png" style="position: absolute; right: 3%; top: 44px; z-index: 1000;" class="hidden-xs" /> -->
 
 <div class="white-ground" style="padding-top: 20px;">
 	<!-- <div id="tag2">
@@ -98,8 +98,32 @@
 	</div> -->
 	<div id="tag2">
 		<div class="container" style="margin-bottom: 14px;">
-			<img src="/img/dinamec-logo-new.png" style="width: 260px; padding-left: 20px;">
-		</div>
+			<div class="row">
+				<div class="col-md-10 hidden-lg hidden-md">	
+					<div id="mySidenav2" class="sidenav">
+					  <a href="#firstModal" id="covid" data-toggle="modal">Covid-19 Notice</a>
+					  <a href="#secondModal" id="letter" data-toggle="modal">Operational Update</a>
+					</div>
+				</div>
+				<div class="col-md-3 hidden-xs">
+					<img src="/img/dinamec-logo-new.png" width="250px">
+				</div>
+				<div class="col-md-3 hidden-lg hidden-md hidden-sm">
+					<img src="/img/dinamec-logo-new.png" width="250px" style="margin-top: 20px;">
+				</div>
+				<div class="col-md-7 hidden-sm hidden-xs">	
+					<div id="mySidenav" class="sidenav">
+					  <a href="#firstModal" id="covid" data-toggle="modal">Covid-19 Notice</a>
+					  <a href="#secondModal" id="letter" data-toggle="modal">Operational Update</a>
+					</div>
+				</div>
+				
+				<div class="col-md-2 hidden-sm hidden-xs">
+					<img src="/img/ribbon.png" style="position: absolute; right: 4%; top: -24px;" class="hidden-xs" />
+					</div>
+				</div>
+			</div>
+ 		</div>
 		<div class="blue-ground shadow">
 			<div class="container" style="margin-bottom: 14px;">
 				<h1 class="hidden-xs" style="color: #ffffff; margin-top: 9px; margin-bottom: 9px; font-size: 1.2em; text-align: center;">Environmentally Friendly Systems For Cleaning Metal Parts, Foundry Applications, Heat Treatment and Sand Recovery</h1>
@@ -217,57 +241,49 @@
     });
 </script>
 	 
-<style>
-	
-#covid {
-	animation: mymove 2s 1;
-	animation-delay: 6s;
-}
-
-#letter {
-	animation: mymove 2s 1;
-	animation-delay: 6.45s;
-}
-
-@keyframes mymove {
-	0% {left: -130px;}
-	35% {left: 0px;}
-	65% {left: 0px;}
-	199% {left: -130px;}
-}
-
-</style>
-
 	 
 <style>
 	 /* Style the links inside the sidenav */
-	 #mySidenav a {
-	   position: absolute; /* Position them relative to the browser window */
+	#mySidenav {
+		position: absolute; /* Position them relative to the browser window */
+		
+		top: -12px;
+		left: 36%;
+	} 
+	#mySidenav2 {
+		right: 12px;
 		z-index: 1000;
-	   
-		left: -130px; /* Position them outside of the screen */
-	   transition: 0.3s; /* Add transition on hover */
-	   padding: 15px; /* 15px padding */
-	   width: 150px; /* Set a specific width */
+		top: -14px;
+		position: absolute;
+	} 
+	#mySidenav a {
+	   padding: 10px 15px; /* 15px padding */
 	   text-decoration: none; /* Remove underline */
-	   font-size: 14px; /* Increase font size */
+	   font-size: 12px; /* Increase font size */
 		font-weight: 600;
 	   color: white; /* White text color */
-	   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+	   border-radius: 0 0 5px 5px; /* Rounded corners on the top right and bottom right side */
 	 }
+ 	#mySidenav2 a {
+		z-index: 1000;
+ 	   padding: 10px 15px; /* 15px padding */
+ 	   text-decoration: none; /* Remove underline */
+ 	   font-size: 12px; /* Increase font size */
+ 		font-weight: 600;
+ 	   color: white; /* White text color */
+ 	   border-radius: 0 0 5px 5px; /* Rounded corners on the top right and bottom right side */
+ 	 }
 
 	 #mySidenav a:hover {
-	   left: 0; /* On mouse-over, make the elements appear as they should */
+	   padding: 11px 15px;
 	 }
 
 	 /* The about link: 20px from the top with a green background */
 	 #covid {
-	   top: 66px;
 	   background-color: #f44336;
 	 }
 
 	 #letter {
-	   top: 126px;
 	   background-color: #2196F3; /* Blue */
 	 }
-	</style> 
+</style> 
