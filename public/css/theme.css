@@ -733,7 +733,14 @@ a.under-link:hover	{
 }
 
 
+a.v-link	{
+	cursor: pointer;
+}
 
+a.v-link:hover	{
+	cursor: pointer;
+	border: 1px solid #eaeaea;
+}
 
 
 
