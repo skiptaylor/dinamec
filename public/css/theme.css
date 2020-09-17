@@ -607,7 +607,7 @@ table#beds tr td	{
 
 
 .ctaction	{
-	padding-top: .5em;
+	padding-top: 0em;
 	background-color: #1960af;
 	color: #ffffff;
 	font-size: 1.2em;
@@ -626,8 +626,8 @@ table#beds tr td	{
 }
 
 #primary	{
-	padding-top: 1.6em;
-	padding-bottom: 2.5em;
+	padding-top: 1em;
+	padding-bottom: 1.8em;
 	z-index: 10000;
 }
 
