@@ -191,23 +191,28 @@
 						
 
 <div class="row">
-	<div class="col-sm-3">
+	<div class="col-sm-4">
 		<a class="v-link" data-toggle="modal" data-target="#exampleModal0" data-whatever="" data-backdrop="static" data-keyboard="false"><img src="/img/v-how-it-works.jpg" width="100%" class="border shadow" /></a>
 		<p style="text-align: center;">How it works</p>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-4">
 		<a class="v-link" type="button" class="" data-toggle="modal" data-target="#exampleModal1" data-whatever="" data-backdrop="static" data-keyboard="false"><img src="/img/v-out-with-old.jpg" width="100%" class="border shadow" /></a>
 		<p style="text-align: center;">Out with the Old</p>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-4">
 		<a class="v-link" type="button" class="" data-toggle="modal" data-target="#exampleModal2" data-whatever="" data-backdrop="static" data-keyboard="false"><img src="/img/v-better-way.jpg" width="100%" class="border shadow" /></a>
 		<p style="text-align: center;">A Better Way</p>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-4">
 		<a class="v-link" type="button" class="" data-toggle="modal" data-target="#exampleModal3" data-whatever="" data-backdrop="static" data-keyboard="false"><img src="/img/v-benefits.jpg" width="100%" class="border shadow" /></a>
 		<p style="text-align: center;">Benefits</p>
 	</div>
+	<div class="col-sm-4">
+		<a class="v-link" type="button" class="" data-toggle="modal" data-target="#exampleModal4" data-whatever="" data-backdrop="static" data-keyboard="false"><img src="/img/v-justification.jpg" width="100%" class="border shadow" /></a>
+		<p style="text-align: center;">Justification</p>
+	</div>
 </div>
+
 <div id="exampleModal0" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
 	  <div class="modal-content">
@@ -264,6 +269,22 @@
       <div class="modal-body">
 		<video id="vid3" width="100%" height="100%" class="border shadow" controls>
 		  <source src="https://fluidcleandinamecsystems.s3.us-east-2.amazonaws.com/Dinamec+Systems+Fluid+Clean+-+Benefits.mp4" type="video/mp4">
+		</video>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+	  <div class="modal-header" style="border: none;">
+		  <button aria-hidden="true" class="close" data-dismiss="modal" type="button"><p style="line-height: 9px; margin-top: 4px;">x</p></button>
+	  </div>
+      <div class="modal-body">
+		<video id="vid4" width="100%" height="100%" class="border shadow" controls>
+		  <source src="https://fluidcleandinamecsystems.s3.us-east-2.amazonaws.com/Burn-Off+Oven+vs.+FluidClean+Justification+3.mp4" type="video/mp4">
 		</video>
       </div>
     </div>
@@ -366,7 +387,6 @@
 		$('#vid0')[0].pause();
 	});
 	
-	
 	$('#exampleModal1').on('shown.bs.modal', function (event) {
 		$('#vid1')[0].play();
 	});
@@ -381,12 +401,18 @@
 		$('#vid2')[0].pause();
 	});
 	
-	
 	$('#exampleModal3').on('shown.bs.modal', function (event) {
 		$('#vid3')[0].play();
 	});
 	$('#exampleModal3').on('hidden.bs.modal', function (event) {
 		$('#vid3')[0].pause();
+	});
+	
+	$('#exampleModal4').on('shown.bs.modal', function (event) {
+		$('#vid4')[0].play();
+	});
+	$('#exampleModal4').on('hidden.bs.modal', function (event) {
+		$('#vid4')[0].pause();
 	});
 	  
 </script>
